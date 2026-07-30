@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TraceCtrl for the CISO — Prove What Your Agents Did</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;650;700&family=Instrument+Sans:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0B1120;--teal:#0FA795;--teal-bright:#2DD4BF;--amber:#B97F1F;--paper:#FFFFFF;--grey:#5B6B80;--line:#E4E9F0}
+  body{background:#EDF1F6;color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Instrument Sans','Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+  .sheet{background:var(--paper);max-width:820px;margin:28px auto;border-radius:8px;box-shadow:0 8px 40px rgba(11,17,32,.12);overflow:hidden}
+  .rule{border-top:1px solid var(--line)}
+  @media print{
+    body{background:#fff}
+    .sheet{margin:0;max-width:none;box-shadow:none;border-radius:0}
+    .no-print{display:none}
+  }
+</style>
+</head>
+<body>
+
+<p class="no-print mono text-center text-[11px] text-[#5B6B80] mt-5">Print-ready A4 · File → Print → Save as PDF</p>
+
+<div class="sheet">
+  <!-- masthead -->
+  <div class="px-10 pt-9 pb-7 text-white" style="background:var(--ink)">
+    <div class="flex items-baseline justify-between flex-wrap gap-2">
+      <div class="flex items-baseline gap-2">
+        <span class="display text-[15px]">CloudsineAI</span><span class="text-white/30">/</span>
+        <span class="mono text-[12px]" style="color:var(--teal-bright)">TraceCtrl</span>
+      </div>
+      <span class="mono text-[10px] tracking-[.14em] uppercase text-white/50">For the CISO · Briefing sheet</span>
+    </div>
+    <h1 class="display text-[30px] leading-tight mt-6 max-w-lg">Your agents are running.<br>Can you prove what they did?</h1>
+    <p class="mt-4 text-[14px] leading-relaxed text-white/70 max-w-xl">
+      CloudsineAI TraceCtrl — the sovereign AI-agent security platform for regulated Asia-Pacific.
+      One platform that discovers every agent, tool and data flow, proves which attack paths are actually
+      exploitable, and enforces protection at runtime — with audit-ready evidence that never leaves your jurisdiction.
+    </p>
+  </div>
+
+  <div class="px-10 py-8">
+    <!-- the gap -->
+    <p class="kicker mb-3">The accountability gap</p>
+    <p class="text-[14px] leading-relaxed text-[#3A4a60] max-w-2xl">
+      Observability tooling reports that agents are healthy — latency, tokens, uptime. It cannot answer the four questions
+      a regulator, an auditor or your board will ask after an incident: <span class="font-medium" style="color:var(--ink)">which agent invoked which tool ·
+      what data it reached · whether it was persuaded · which path an attacker would take first.</span>
+      MAS's SAFR paper (July 2026) and IMDA's agentic-AI framework (2026) now set exactly those expectations: authorised scope,
+      runtime assessment, and records retained for accountability.
+    </p>
+
+    <!-- loop table -->
+    <div class="rule mt-7 pt-7">
+      <p class="kicker mb-4">The AgentSecOps loop — mapped to what you must evidence</p>
+      <table class="w-full text-[12.5px]">
+        <thead>
+          <tr class="mono text-[10px] tracking-[.12em] uppercase text-[#5B6B80]">
+            <th class="text-left py-2 pr-3 font-medium border-b" style="border-color:var(--line)">Stage</th>
+            <th class="text-left py-2 pr-3 font-medium border-b" style="border-color:var(--line)">TraceCtrl module</th>
+            <th class="text-left py-2 font-medium border-b" style="border-color:var(--line)">The evidence you get</th>
+          </tr>
+        </thead>
+        <tbody class="text-[#3A4A60]">
+          <tr class="border-b" style="border-color:var(--line)"><td class="py-2.5 pr-3 font-medium" style="color:var(--ink)">Discover</td><td class="py-2.5 pr-3">Inventory &amp; Topology</td><td class="py-2.5">Complete agent, tool and AI-BOM inventory — including unregistered agents</td></tr>
+          <tr class="border-b" style="border-color:var(--line)"><td class="py-2.5 pr-3 font-medium" style="color:var(--ink)">Assess</td><td class="py-2.5 pr-3">Risk Eval + Intel (LVD feed)</td><td class="py-2.5">Posture-derived risk score; blast radius; toxic permission combinations</td></tr>
+          <tr class="border-b" style="border-color:var(--line)"><td class="py-2.5 pr-3 font-medium" style="color:var(--ink)">Test</td><td class="py-2.5 pr-3">Red-Team Eval (TAGAAI engine)</td><td class="py-2.5">Closed-loop validation: which attack paths are exploitable, evidence attached</td></tr>
+          <tr class="border-b" style="border-color:var(--line)"><td class="py-2.5 pr-3 font-medium" style="color:var(--ink)">Protect</td><td class="py-2.5 pr-3">Guard (ShieldPrompt™)</td><td class="py-2.5">Runtime enforcement at the agent/LLM layer — every intervention logged</td></tr>
+          <tr><td class="py-2.5 pr-3 font-medium" style="color:var(--ink)">Govern</td><td class="py-2.5 pr-3">Fix + audit trail</td><td class="py-2.5">Remediation guidance, policy updates, audit-ready records mapped to MAS / IMDA</td></tr>
+        </tbody>
+      </table>
+      <p class="mono mt-3 text-[10.5px] text-[#5B6B80]">A list of theoretical risks is an argument. A validated attack path is a decision.</p>
+    </div>
+
+    <!-- sovereignty + proof -->
+    <div class="rule mt-7 pt-7 grid md:grid-cols-2 gap-8">
+      <div>
+        <p class="kicker mb-3">Sovereignty, by design</p>
+        <p class="text-[13px] leading-relaxed text-[#3A4A60]">
+          Nearly every platform in this category is built and hosted in the US, EU or Israel. TraceCtrl deploys as
+          <span class="font-medium" style="color:var(--ink)">managed SaaS (Singapore-hosted), in your cloud / on-premise, or as a hardware appliance</span>
+          for air-gapped environments — so agent telemetry and incident evidence remain inside your jurisdiction and
+          your procurement rails. MAS and IMDA compliance mapping available.
+        </p>
+      </div>
+      <div>
+        <p class="kicker mb-3">Why CloudsineAI</p>
+        <ul class="mono text-[11.5px] leading-7 text-[#3A4A60]">
+          <li>· 14 years security DNA — Singapore since 2012</li>
+          <li>· 41 customers · 5 countries · 12,000+ URLs monitored</li>
+          <li>· 100 GenAI apps secured in one public-sector deployment</li>
+          <li>· LVD: 44+ vulnerabilities · 37 model versions catalogued</li>
+          <li>· We run our own operations on agentic AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="rule mt-7 pt-6 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="display text-[17px]" style="color:var(--ink)">TAGAAI attack-surface mapping session</p>
+        <p class="text-[12.5px] text-[#5B6B80] mt-1">Half a day. We map your agent topology and show you the paths an adversary would take first. You keep the output either way.</p>
+      </div>
+      <a href="mailto:hello@cloudsine.tech?subject=TAGAAI%20mapping%20session" class="mono text-[12px] px-5 py-3 rounded-lg text-white" style="background:var(--teal)">Book: hello@cloudsine.tech</a>
+    </div>
+  </div>
+
+  <div class="px-10 py-4 text-white/60 mono text-[9.5px] tracking-[.08em] flex justify-between flex-wrap gap-2" style="background:var(--ink)">
+    <span>CLOUDSINEAI · SINGAPORE SINCE 2012 · WWW.CLOUDSINE.TECH</span>
+    <span>TRACE YOUR AGENTS. CONTROL YOUR RISKS.</span>
+  </div>
+</div>
+
+</body>
+</html>

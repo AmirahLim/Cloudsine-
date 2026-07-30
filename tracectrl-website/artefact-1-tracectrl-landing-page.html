@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TraceCtrl by CloudsineAI — Trace Your Agents. Control Your Risks.</title>
+<meta name="description" content="TraceCtrl discovers every agent, tool and data flow, proves which attack paths are actually exploitable, and enforces protection at runtime — on infrastructure that stays inside your jurisdiction.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;650;700&family=Instrument+Sans:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1120; --card:#141E33; --card2:#1B2942;
+    --teal:#2DD4BF; --amber:#F5B85C; --body:#8FA0B8;
+    --border:rgba(255,255,255,.08); --border-hi:rgba(255,255,255,.18);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink); color:#E6ECF5;
+    font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    font-weight:400; -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Instrument Sans','Inter',ui-sans-serif,system-ui,sans-serif;font-weight:700;letter-spacing:-0.02em}
+  .mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .kicker{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+  .body-copy{color:var(--body);max-width:62ch}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px}
+  .card-2{background:var(--card2)}
+
+  /* ---------- scroll reveal ---------- */
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .18s ease-out,transform .18s ease-out;transition-delay:var(--d,0ms)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- bento hover ---------- */
+  .bento{transition:border-color .18s ease-out,transform .18s ease-out}
+  @media (hover:hover){
+    .bento:hover{border-color:var(--border-hi);transform:translateY(-2px)}
+  }
+
+  /* ---------- CTAs ---------- */
+  .cta{transition:background-color .15s ease-out,color .15s ease-out,transform .15s ease-out,border-color .15s ease-out}
+  .cta-primary{background:var(--teal);color:var(--ink)}
+  .cta-primary:hover{background:#4ce0cd;transform:translateY(-1px)}
+  .cta-ghost{border:1px solid var(--border);color:#E6ECF5}
+  .cta-ghost:hover{border-color:var(--border-hi)}
+
+  /* ---------- hero attack graph ---------- */
+  .edge{stroke:var(--teal);stroke-opacity:.3;stroke-width:1;
+    stroke-dasharray:1;stroke-dashoffset:1;
+    animation:drawEdge .7s ease-out forwards;animation-delay:var(--ed,0s)}
+  .edge.hot{stroke-opacity:.55;stroke-width:1.4;
+    animation:drawEdge .7s ease-out forwards,hotPulse 3.4s ease-in-out 1.5s 1;
+    animation-delay:var(--ed,0s),1.5s}
+  @keyframes drawEdge{to{stroke-dashoffset:0}}
+  @keyframes hotPulse{
+    0%{stroke:var(--teal)}
+    12%{stroke:var(--amber);stroke-opacity:.95}
+    28%{stroke:var(--amber);stroke-opacity:.45}
+    44%{stroke:var(--amber);stroke-opacity:.95}
+    72%{stroke:var(--amber);stroke-opacity:.85}
+    100%{stroke:var(--teal);stroke-opacity:.55}
+  }
+  .gnode{fill:var(--teal);fill-opacity:.85}
+  .gnode-dim{fill:var(--teal);fill-opacity:.35}
+
+  /* ---------- terminal cursor (only loop on the page) ---------- */
+  .cursor{display:inline-block;width:8px;height:15px;background:var(--teal);vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* ---------- final CTA glow: the one gradient ---------- */
+  .glow{background:radial-gradient(600px 320px at 50% 40%, rgba(45,212,191,.07), transparent 70%)}
+
+  /* ---------- reduced motion ---------- */
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .bento,.cta{transition:none}
+    .edge,.edge.hot{animation:none;stroke-dashoffset:0}
+    .edge.hot{stroke:var(--teal)}
+    .cursor{animation:none}
+    #ringSweep{display:none}
+  }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- ===================== NAV ===================== -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/[.06]" style="background:rgba(11,17,32,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)">
+  <nav class="mx-auto max-w-6xl px-5 h-16 flex items-center justify-between" aria-label="Primary">
+    <a href="#" class="flex items-baseline gap-2">
+      <span class="display text-[15px] text-white">CloudsineAI</span>
+      <span class="text-white/25 text-sm" aria-hidden="true">/</span>
+      <span class="mono text-[13px] text-teal-300" style="color:var(--teal)">TraceCtrl</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm text-[#8FA0B8]">
+      <a href="#platform" class="hover:text-white transition-colors duration-150">Platform</a>
+      <a href="#tagaai" class="hover:text-white transition-colors duration-150">TAGAAI</a>
+      <a href="#how" class="hover:text-white transition-colors duration-150">How it works</a>
+      <a href="#sovereignty" class="hover:text-white transition-colors duration-150">Sovereignty</a>
+      <a href="#pricing" class="hover:text-white transition-colors duration-150">Pricing</a>
+      <a href="#research" class="hover:text-white transition-colors duration-150">Research</a>
+    </div>
+    <a href="#book" class="cta cta-ghost rounded-lg px-4 py-2 text-sm">Book a mapping session</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="relative overflow-hidden pt-36 pb-24 md:pt-44 md:pb-32">
+  <!-- attack graph -->
+  <div class="absolute inset-0 md:left-auto md:w-1/2 opacity-20 md:opacity-100 pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 640 640" class="w-full h-full" preserveAspectRatio="xMidYMid slice">
+      <!-- edges -->
+      <g pathLength="1">
+        <line class="edge" pathLength="1" style="--ed:.00s" x1="80"  y1="140" x2="210" y2="80"/>
+        <line class="edge" pathLength="1" style="--ed:.05s" x1="210" y1="80"  x2="340" y2="150"/>
+        <line class="edge" pathLength="1" style="--ed:.10s" x1="340" y1="150" x2="470" y2="90"/>
+        <line class="edge" pathLength="1" style="--ed:.15s" x1="470" y1="90"  x2="560" y2="200"/>
+        <line class="edge" pathLength="1" style="--ed:.08s" x1="80"  y1="140" x2="150" y2="260"/>
+        <line class="edge" pathLength="1" style="--ed:.12s" x1="210" y1="80"  x2="300" y2="300"/>
+        <line class="edge hot" pathLength="1" style="--ed:.18s" x1="340" y1="150" x2="300" y2="300"/>
+        <line class="edge" pathLength="1" style="--ed:.20s" x1="470" y1="90"  x2="450" y2="260"/>
+        <line class="edge" pathLength="1" style="--ed:.22s" x1="560" y1="200" x2="450" y2="260"/>
+        <line class="edge" pathLength="1" style="--ed:.16s" x1="150" y1="260" x2="300" y2="300"/>
+        <line class="edge" pathLength="1" style="--ed:.24s" x1="300" y1="300" x2="450" y2="260"/>
+        <line class="edge" pathLength="1" style="--ed:.28s" x1="450" y1="260" x2="560" y2="360"/>
+        <line class="edge" pathLength="1" style="--ed:.26s" x1="150" y1="260" x2="100" y2="420"/>
+        <line class="edge" pathLength="1" style="--ed:.30s" x1="300" y1="300" x2="250" y2="470"/>
+        <line class="edge" pathLength="1" style="--ed:.32s" x1="100" y1="420" x2="250" y2="470"/>
+        <line class="edge" pathLength="1" style="--ed:.34s" x1="250" y1="470" x2="400" y2="430"/>
+        <line class="edge hot" pathLength="1" style="--ed:.36s" x1="300" y1="300" x2="400" y2="430"/>
+        <line class="edge" pathLength="1" style="--ed:.38s" x1="400" y1="430" x2="450" y2="260"/>
+        <line class="edge hot" pathLength="1" style="--ed:.40s" x1="400" y1="430" x2="530" y2="500"/>
+        <line class="edge" pathLength="1" style="--ed:.42s" x1="560" y1="360" x2="530" y2="500"/>
+        <line class="edge" pathLength="1" style="--ed:.44s" x1="250" y1="470" x2="320" y2="570"/>
+        <line class="edge" pathLength="1" style="--ed:.46s" x1="320" y1="570" x2="530" y2="500"/>
+      </g>
+      <!-- containment ring sweeping the exploitable path -->
+      <circle id="ringSweep" r="9" fill="none" stroke="#2DD4BF" stroke-width="1.5" opacity="0">
+        <animateMotion begin="3.5s" dur="1.2s" fill="freeze" path="M340 150 L300 300 L400 430 L530 500"/>
+        <animate attributeName="opacity" begin="3.5s" dur="1.2s" values="0;.9;.9;0" fill="freeze"/>
+      </circle>
+      <!-- nodes -->
+      <g>
+        <circle class="gnode-dim" cx="80"  cy="140" r="3"/>
+        <circle class="gnode"     cx="210" cy="80"  r="3.5"/>
+        <circle class="gnode"     cx="340" cy="150" r="4"/>
+        <circle class="gnode-dim" cx="470" cy="90"  r="3"/>
+        <circle class="gnode-dim" cx="560" cy="200" r="3"/>
+        <circle class="gnode-dim" cx="150" cy="260" r="3"/>
+        <circle class="gnode"     cx="300" cy="300" r="4.5"/>
+        <circle class="gnode"     cx="450" cy="260" r="3.5"/>
+        <circle class="gnode-dim" cx="560" cy="360" r="3"/>
+        <circle class="gnode-dim" cx="100" cy="420" r="3"/>
+        <circle class="gnode"     cx="250" cy="470" r="3.5"/>
+        <circle class="gnode"     cx="400" cy="430" r="4"/>
+        <circle class="gnode"     cx="530" cy="500" r="3.5"/>
+        <circle class="gnode-dim" cx="320" cy="570" r="3"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <p class="kicker mb-6">The Sovereign AI-Agent Security Platform · Asia-Pacific</p>
+      <h1 class="display text-white leading-[1.05]" style="font-size:clamp(2.6rem,6vw,4.6rem)">
+        Trace Your Agents.<br>Control Your Risks.
+      </h1>
+      <p class="body-copy mt-7 text-lg leading-relaxed">
+        You can see that your agents are running. You cannot say what they did.
+        TraceCtrl discovers every agent, tool and data flow, proves which attack
+        paths are actually exploitable, and enforces protection at runtime — on
+        infrastructure that stays inside your jurisdiction.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="#book" class="cta cta-primary rounded-lg px-6 py-3.5 text-[15px] font-medium">Map your agent attack surface</a>
+        <a href="#research" class="cta cta-ghost rounded-lg px-6 py-3.5 text-[15px]">Read the research</a>
+      </div>
+      <p class="mono mt-12 text-[12px] tracking-[.08em] text-[#8FA0B8]">
+        14 years security DNA&nbsp;&nbsp;·&nbsp;&nbsp;41 customers&nbsp;&nbsp;·&nbsp;&nbsp;5 countries&nbsp;&nbsp;·&nbsp;&nbsp;Government trusted
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE GAP ===================== -->
+<section class="py-24 md:py-32 border-t border-white/[.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <p class="kicker reveal mb-5">The accountability gap</p>
+    <h2 class="display reveal text-white text-3xl md:text-4xl max-w-xl leading-tight" style="--d:60ms">
+      Observability tells you your agents are alive. Not what they are accountable for.
+    </h2>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-5">
+      <div class="card reveal p-8" style="--d:120ms">
+        <h3 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-6">Performance monitoring</h3>
+        <ul class="mono text-[13px] leading-8 text-[#8FA0B8]/80 space-y-1">
+          <li>latency&nbsp; p50 / p95 / p99</li>
+          <li>token spend per request</li>
+          <li>error and retry rates</li>
+          <li>uptime and throughput</li>
+        </ul>
+        <p class="mt-6 text-sm text-[#8FA0B8]">Necessary. Not sufficient.</p>
+      </div>
+
+      <div class="card card-2 reveal p-8" style="--d:180ms">
+        <h3 class="mono text-[12px] tracking-[.14em] uppercase mb-6" style="color:var(--teal)">Security intelligence</h3>
+        <ul class="text-[15px] leading-8 text-white/90 space-y-1">
+          <li class="flex gap-3"><svg class="mt-2.5 shrink-0" width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M1 5.5L5 9.5L13 1.5" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>which agent invoked which tool</li>
+          <li class="flex gap-3"><svg class="mt-2.5 shrink-0" width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M1 5.5L5 9.5L13 1.5" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>what data it reached</li>
+          <li class="flex gap-3"><svg class="mt-2.5 shrink-0" width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M1 5.5L5 9.5L13 1.5" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>whether it was persuaded</li>
+          <li class="flex gap-3"><svg class="mt-2.5 shrink-0" width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true"><path d="M1 5.5L5 9.5L13 1.5" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>which path an attacker takes first</li>
+        </ul>
+        <p class="mt-6 text-sm" style="color:var(--teal)">What TraceCtrl answers.</p>
+      </div>
+    </div>
+
+    <p class="reveal mt-10 text-lg text-white/85 max-w-2xl" style="--d:240ms">
+      That is the accountability gap. It widens with every agent you deploy.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== THE LOOP (BENTO) ===================== -->
+<section id="platform" class="py-24 md:py-32 border-t border-white/[.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <p class="kicker reveal mb-5">The loop</p>
+    <h2 class="display reveal text-white text-3xl md:text-4xl max-w-2xl leading-tight" style="--d:60ms">
+      Five questions your board will ask. One platform that answers them.
+    </h2>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-6 gap-5">
+
+      <!-- Discover -->
+      <article class="card bento reveal p-7 md:col-span-2" style="--d:60ms">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" class="mb-6">
+          <circle cx="12" cy="14" r="3" stroke="#2DD4BF" stroke-width="1.4"/>
+          <circle cx="32" cy="10" r="3" stroke="#2DD4BF" stroke-width="1.4"/>
+          <circle cx="22" cy="28" r="3.5" stroke="#2DD4BF" stroke-width="1.4"/>
+          <circle cx="35" cy="34" r="2.5" stroke="#2DD4BF" stroke-width="1.4" opacity=".5"/>
+          <circle cx="8" cy="34" r="2.5" stroke="#2DD4BF" stroke-width="1.4" opacity=".5"/>
+          <path d="M14.5 16L20 25M29.5 12L24 25M24.5 30L32.8 33M19 30.5L10.5 32.8" stroke="#2DD4BF" stroke-width="1" opacity=".45"/>
+        </svg>
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Discover</p>
+        <h3 class="display text-white text-xl mb-3">What agents do we actually have?</h3>
+        <p class="text-sm leading-relaxed text-[#8FA0B8]">OpenTelemetry-native discovery maps every agent, MCP server, tool and data flow across your estate — including the ones nobody registered — on any cloud, framework or model.</p>
+      </article>
+
+      <!-- Assess -->
+      <article class="card bento reveal p-7 md:col-span-2" style="--d:120ms">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" class="mb-6">
+          <path d="M8 32a14 14 0 0 1 28 0" stroke="#2DD4BF" stroke-width="1.4" opacity=".45"/>
+          <path d="M8 32a14 14 0 0 1 18.2-13.3" stroke="#2DD4BF" stroke-width="1.6"/>
+          <line x1="22" y1="32" x2="30" y2="21" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="22" cy="32" r="2.2" fill="#2DD4BF"/>
+        </svg>
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Assess</p>
+        <h3 class="display text-white text-xl mb-3">Which risks actually matter?</h3>
+        <p class="text-sm leading-relaxed text-[#8FA0B8]">The TAGAAI attack-graph engine ranks exposure by blast radius and toxic combinations of permissions, identities and data — not by generic severity scores. Build-time scanning catches risky changes before they ship.</p>
+      </article>
+
+      <!-- Test -->
+      <article class="card bento reveal p-7 md:col-span-2" style="--d:180ms">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" class="mb-6">
+          <circle cx="22" cy="22" r="13" stroke="#2DD4BF" stroke-width="1.4" opacity=".45"/>
+          <path d="M22 5v7M22 32v7M5 22h7M32 22h7" stroke="#2DD4BF" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M13 29L22 22L28 25L33 15" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Test</p>
+        <h3 class="display text-white text-xl mb-3">Can an attacker actually get through?</h3>
+        <p class="text-sm leading-relaxed text-[#8FA0B8]">Strike, the closed-loop red-team module, runs the attack against your live configuration and attaches the evidence — exploitable, or provably not. Every finding maps back to a graph path.</p>
+      </article>
+
+      <!-- Protect -->
+      <article class="card bento reveal p-7 md:col-span-3" style="--d:240ms">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" class="mb-6">
+          <path d="M22 5l13 5v10c0 8.5-5.5 15-13 19-7.5-4-13-10.5-13-19V10l13-5z" stroke="#2DD4BF" stroke-width="1.4" opacity=".5"/>
+          <path d="M13 15h18M13 21h18M13 27h13" stroke="#2DD4BF" stroke-width="1" opacity=".45"/>
+          <path d="M16 21l4 4 8-8" stroke="#2DD4BF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Protect</p>
+        <h3 class="display text-white text-xl mb-3">Can we stop it in real time?</h3>
+        <p class="text-sm leading-relaxed text-[#8FA0B8] max-w-md">Guard, with ShieldPrompt™ prompt-injection defence, intercepts persuasion attacks, tool abuse and data exfiltration in the request path — enforcement, not alerting. Every intervention is logged.</p>
+      </article>
+
+      <!-- Govern -->
+      <article class="card bento reveal p-7 md:col-span-3" style="--d:300ms">
+        <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true" class="mb-6">
+          <path d="M8 10h28M8 17h28M8 24h20M8 31h24" stroke="#2DD4BF" stroke-width="1.4" opacity=".5" stroke-linecap="round"/>
+          <circle cx="36" cy="24" r="2" fill="#2DD4BF"/>
+          <circle cx="36" cy="31" r="2" fill="#2DD4BF" opacity=".5"/>
+        </svg>
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Govern</p>
+        <h3 class="display text-white text-xl mb-3">Can we prove it to the regulator?</h3>
+        <p class="text-sm leading-relaxed text-[#8FA0B8] max-w-md">Every decision, invocation and intervention lands in an immutable evidence ledger, with compliance exports mapped to the frameworks your auditors already use — MAS, IMDA, NIST AI RMF, OWASP.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TAGAAI ===================== -->
+<section id="tagaai" class="py-24 md:py-32 border-t border-white/[.06]" style="background:#0A0F1C">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="kicker reveal mb-5">TAGAAI · Threat &amp; Attack Graph Analysis for Agentic AI</p>
+      <h2 class="display reveal text-white text-3xl md:text-4xl leading-tight" style="--d:60ms">
+        Most platforms score risk. TAGAAI proves it.
+      </h2>
+      <p class="body-copy reveal mt-6 leading-relaxed" style="--d:120ms">
+        TAGAAI builds the attack graph from live configuration, permissions,
+        identities and data flows — then surfaces blast radius and toxic
+        combinations an attacker would chain together. Closed-loop red-team
+        validation runs the path and attaches the evidence.
+      </p>
+      <p class="body-copy reveal mt-4 leading-relaxed" style="--d:150ms">
+        Under the hood, the engine extends MulVAL — the peer-reviewed attack-graph
+        framework — with custom Datalog interaction rules written for agentic AI:
+        prompt injection, tool chaining, scoped-token reuse, memory poisoning.
+        Findings are grounded in standards your auditors recognise, not a
+        proprietary score.
+      </p>
+      <p class="reveal mt-8 text-lg text-white/90 max-w-lg" style="--d:180ms">
+        A list of theoretical risks is an argument. A validated attack path is a decision.
+      </p>
+    </div>
+
+    <div class="reveal" style="--d:240ms">
+      <div class="card overflow-hidden" role="img" aria-label="Terminal output showing a validated finding: the path crm-agent to jira-mcp to s3 finance bucket was found exploitable with evidence attached, then contained.">
+        <div class="flex items-center gap-2 px-5 py-3 border-b border-white/[.06]">
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="mono ml-3 text-[11px] text-[#8FA0B8]/70">tagaai — validation run 0x41F2</span>
+        </div>
+        <div class="mono p-6 text-[13px] leading-7">
+          <p class="text-[#8FA0B8]"><span style="color:var(--teal)">$</span> tagaai validate --graph prod --path P-0117</p>
+          <p class="mt-3 text-[#8FA0B8]">PATH&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white/90">crm-agent → jira-mcp → s3://finance</span></p>
+          <p class="text-[#8FA0B8]">TECHNIQUE&nbsp;&nbsp;indirect prompt injection → scoped-token reuse</p>
+          <p class="mt-3" style="color:var(--amber)">STATUS&nbsp;&nbsp;&nbsp;&nbsp;EXPLOITABLE — evidence attached</p>
+          <p class="text-[#8FA0B8]">EVIDENCE&nbsp;&nbsp;&nbsp;trace 8c41…e9 · 14 steps · 2.31s</p>
+          <p class="text-[#8FA0B8]">ACTION&nbsp;&nbsp;&nbsp;&nbsp;runtime policy RP-armoured-s3 applied</p>
+          <p class="mt-3">STATUS&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--teal)">CONTAINED</span></p>
+          <p class="mt-3 text-[#8FA0B8]"><span style="color:var(--teal)">$</span>&nbsp;<span class="cursor" aria-hidden="true"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section id="how" class="py-24 md:py-32 border-t border-white/[.06]">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 md:order-1" style="--d:180ms">
+      <div class="card overflow-hidden" role="img" aria-label="Code snippet showing three-line OpenTelemetry-native instrumentation of an agent with TraceCtrl.">
+        <div class="flex items-center gap-2 px-5 py-3 border-b border-white/[.06]">
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-white/15" aria-hidden="true"></span>
+          <span class="mono ml-3 text-[11px] text-[#8FA0B8]/70">agent.py — instrument once</span>
+        </div>
+        <div class="mono p-6 text-[13px] leading-7">
+          <p class="text-[#8FA0B8]"><span class="text-white/40">from</span> <span class="text-white/90">tracectrl</span> <span class="text-white/40">import</span> <span class="text-white/90">instrument</span></p>
+          <p class="mt-2 text-[#8FA0B8]">instrument(<span style="color:var(--teal)">"crm-agent"</span>)&nbsp;&nbsp;<span class="text-white/30"># OTEL-native, one line</span></p>
+          <p class="mt-2 text-[#8FA0B8]"><span class="text-white/30"># agents, tools &amp; data flows now traced</span></p>
+          <p class="mt-4 text-[#8FA0B8]"><span style="color:var(--teal)">✓</span> discovered&nbsp;&nbsp;<span class="text-white/90">crm-agent · 6 tools · 3 data stores</span></p>
+          <p class="text-[#8FA0B8]"><span style="color:var(--teal)">✓</span> graphed&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white/90">attack surface mapped in 0.8s</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="order-1 md:order-2">
+      <p class="kicker reveal mb-5">How it works</p>
+      <h2 class="display reveal text-white text-3xl md:text-4xl leading-tight" style="--d:60ms">
+        OTEL-native. Any cloud. Any framework. Any model.
+      </h2>
+      <p class="body-copy reveal mt-6 leading-relaxed" style="--d:120ms">
+        TraceCtrl instruments your agents through OpenTelemetry — the standard
+        your platform teams already run — so there is no proprietary agent to
+        deploy and no lock-in to accept. Discovery starts within minutes;
+        the attack graph builds itself from live telemetry.
+      </p>
+      <div class="reveal mt-8 flex flex-wrap gap-2" style="--d:150ms">
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">LangChain</span>
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">CrewAI</span>
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">Agno</span>
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">Strands</span>
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">MCP servers</span>
+        <span class="mono text-[11.5px] px-3 py-1.5 rounded-full border border-white/10 text-[#8FA0B8]">Any LLM</span>
+      </div>
+      <p class="mono reveal mt-6 text-[12px] tracking-[.06em] text-[#8FA0B8]" style="--d:180ms">
+        Build-time scanning · runtime tracing · SSO / RBAC · SIEM, SOAR &amp; GRC integrations
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOVEREIGNTY ===================== -->
+<section id="sovereignty" class="py-24 md:py-32 border-t border-white/[.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <p class="kicker reveal mb-5">Sovereignty</p>
+    <h2 class="display reveal text-white text-3xl md:text-4xl leading-tight max-w-xl" style="--d:60ms">
+      Where does your evidence go?
+    </h2>
+    <p class="body-copy reveal mt-6 leading-relaxed" style="--d:120ms">
+      Nearly every platform in this category is built in the US, EU or Israel —
+      a fine place to build software, a difficult place to store a regulated
+      Asian institution's agent telemetry and incident evidence.
+    </p>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5">
+      <div class="card reveal p-7" style="--d:120ms">
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Managed SaaS</p>
+        <h3 class="display text-white text-lg mb-2">Singapore-hosted</h3>
+        <p class="text-sm text-[#8FA0B8] leading-relaxed">For teams that want speed with data residency intact.</p>
+      </div>
+      <div class="card reveal p-7" style="--d:180ms">
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Your cloud / on-premise</p>
+        <h3 class="display text-white text-lg mb-2">Inside your perimeter</h3>
+        <p class="text-sm text-[#8FA0B8] leading-relaxed">For banks and agencies whose evidence never leaves their tenancy.</p>
+      </div>
+      <div class="card reveal p-7" style="--d:240ms">
+        <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">Hardware appliance</p>
+        <h3 class="display text-white text-lg mb-2">Air-gapped</h3>
+        <p class="text-sm text-[#8FA0B8] leading-relaxed">For classified and disconnected environments.</p>
+      </div>
+    </div>
+
+    <p class="mono reveal mt-8 text-[12px] tracking-[.06em] text-[#8FA0B8]" style="--d:300ms">MAS and IMDA mapping available.</p>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section id="pricing" class="py-24 md:py-32 border-t border-white/[.06]">
+  <div class="mx-auto max-w-6xl px-5">
+    <p class="kicker reveal mb-5">Pricing</p>
+    <h2 class="display reveal text-white text-3xl md:text-4xl leading-tight max-w-xl" style="--d:60ms">
+      Start free. Prove it on your own estate. Scale when it matters.
+    </h2>
+
+    <div class="mt-14 grid md:grid-cols-3 gap-5">
+      <!-- Developer -->
+      <div class="card reveal p-7 flex flex-col" style="--d:120ms">
+        <div class="flex items-center justify-between mb-4">
+          <p class="mono text-[11px] tracking-[.14em] uppercase" style="color:var(--teal)">Developer</p>
+          <span class="mono text-[10.5px] px-2.5 py-1 rounded-full border" style="color:var(--teal);border-color:rgba(45,212,191,.35)">Free</span>
+        </div>
+        <h3 class="display text-white text-lg mb-4">See your agents today</h3>
+        <ul class="text-sm text-[#8FA0B8] leading-7 space-y-0.5 flex-1">
+          <li>· Up to 3 agents</li>
+          <li>· OTEL-native telemetry &amp; tracing</li>
+          <li>· 7-day trace history</li>
+          <li>· Community support</li>
+        </ul>
+        <p class="mono mt-5 text-[10.5px] tracking-[.08em] uppercase text-[#8FA0B8]/60">Acquire</p>
+      </div>
+      <!-- Pro -->
+      <div class="card card-2 reveal p-7 flex flex-col" style="--d:180ms">
+        <div class="flex items-center justify-between mb-4">
+          <p class="mono text-[11px] tracking-[.14em] uppercase" style="color:var(--teal)">Pro</p>
+          <span class="mono text-[10.5px] px-2.5 py-1 rounded-full border border-white/15 text-[#8FA0B8]">Coming soon</span>
+        </div>
+        <h3 class="display text-white text-lg mb-4">Prove what they did</h3>
+        <ul class="text-sm text-[#8FA0B8] leading-7 space-y-0.5 flex-1">
+          <li>· Unlimited agents</li>
+          <li>· TAGAAI attack-graph analysis</li>
+          <li>· Guard runtime protection &amp; compliance</li>
+          <li>· 90-day trace history</li>
+        </ul>
+        <p class="mono mt-5 text-[10.5px] tracking-[.08em] uppercase text-[#8FA0B8]/60">Activate</p>
+      </div>
+      <!-- Enterprise -->
+      <div class="card reveal p-7 flex flex-col" style="--d:240ms">
+        <div class="flex items-center justify-between mb-4">
+          <p class="mono text-[11px] tracking-[.14em] uppercase" style="color:var(--teal)">Enterprise</p>
+          <span class="mono text-[10.5px] px-2.5 py-1 rounded-full border border-white/15 text-[#8FA0B8]">Custom</span>
+        </div>
+        <h3 class="display text-white text-lg mb-4">Control them, sovereignly</h3>
+        <ul class="text-sm text-[#8FA0B8] leading-7 space-y-0.5 flex-1">
+          <li>· Risk + Strike + Guard, full loop</li>
+          <li>· Multi-cloud, on-premise or air-gapped</li>
+          <li>· SSO, RBAC, SIEM / SOAR / GRC</li>
+          <li>· MAS &amp; IMDA compliance mapping</li>
+        </ul>
+        <p class="mono mt-5 text-[10.5px] tracking-[.08em] uppercase text-[#8FA0B8]/60">Monetise</p>
+      </div>
+    </div>
+
+    <p class="reveal mt-10 text-[15px] text-white/85 max-w-2xl" style="--d:300ms">
+      The free tier is the wedge: technical usefulness opens the door, proof on
+      your own estate converts, sovereignty closes.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PROOF BAND ===================== -->
+<section id="research" class="py-24 md:py-28 border-t border-white/[.06]" style="background:#0A0F1C">
+  <div class="mx-auto max-w-6xl px-5 grid md:grid-cols-3 gap-12 md:gap-8">
+    <div class="reveal">
+      <p class="display text-white" style="font-size:clamp(2.4rem,4.5vw,3.4rem)"><span class="count" data-target="14">0</span> years</p>
+      <p class="mt-3 text-[15px] text-white/85">of security heritage</p>
+      <p class="mono mt-2 text-[11px] tracking-[.06em] text-[#8FA0B8]/70">CloudsineAI · founded Singapore, 2012</p>
+    </div>
+    <div class="reveal" style="--d:80ms">
+      <p class="display text-white" style="font-size:clamp(2.4rem,4.5vw,3.4rem)"><span class="count" data-target="100">0</span></p>
+      <p class="mt-3 text-[15px] text-white/85">GenAI applications secured in one public-sector deployment</p>
+      <p class="mono mt-2 text-[11px] tracking-[.06em] text-[#8FA0B8]/70">Single government engagement</p>
+    </div>
+    <div class="reveal" style="--d:160ms">
+      <p class="display text-white" style="font-size:clamp(2.4rem,4.5vw,3.4rem)"><span class="count" data-target="44">0</span>+</p>
+      <p class="mt-3 text-[15px] text-white/85">vulnerabilities catalogued across 37 model versions</p>
+      <p class="mono mt-2 text-[11px] tracking-[.06em] text-[#8FA0B8]/70">Public LLM Vulnerability Database (LVD)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="book" class="relative py-28 md:py-36 border-t border-white/[.06] overflow-hidden">
+  <div class="absolute inset-0 glow pointer-events-none" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-3xl px-5 text-center">
+    <h2 class="display reveal text-white leading-tight" style="font-size:clamp(2rem,4.5vw,3.2rem)">
+      Book a TAGAAI attack-surface mapping session.
+    </h2>
+    <p class="reveal mt-6 text-lg text-[#8FA0B8] max-w-xl mx-auto leading-relaxed" style="--d:60ms">
+      We map your agent topology and show you the paths an adversary would take
+      first. Half a day. You keep the output either way.
+    </p>
+    <div class="reveal mt-10" style="--d:120ms">
+      <a href="mailto:hello@cloudsine.tech?subject=TAGAAI%20mapping%20session" class="cta cta-primary inline-block rounded-lg px-8 py-4 text-[15px] font-medium">Book a mapping session</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="border-t border-white/[.06] py-12">
+  <div class="mx-auto max-w-6xl px-5 flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm text-[#8FA0B8]">
+    <p><span class="text-white/80">CloudsineAI</span> · Singapore since 2012</p>
+    <nav class="flex gap-7" aria-label="Footer">
+      <a href="#platform" class="hover:text-white transition-colors duration-150">Platform</a>
+      <a href="#how" class="hover:text-white transition-colors duration-150">How it works</a>
+      <a href="#pricing" class="hover:text-white transition-colors duration-150">Pricing</a>
+      <a href="#research" class="hover:text-white transition-colors duration-150">LVD</a>
+      <a href="#book" class="hover:text-white transition-colors duration-150">Contact</a>
+    </nav>
+    <p class="mono text-[11px] tracking-[.06em] text-[#8FA0B8]/70">We run our own operations on agentic AI. We secure what we run.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -5% 0px' });
+    revealEls.forEach(function (el) { ro.observe(el); });
+  }
+
+  /* ---- count-up stats (once) ---- */
+  var counters = document.querySelectorAll('.count');
+  function animate(el) {
+    var target = parseInt(el.dataset.target, 10);
+    if (reduced) { el.textContent = target; return; }
+    var start = null, dur = 1100;
+    function step(ts) {
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (!('IntersectionObserver' in window)) {
+    counters.forEach(function (el) { el.textContent = el.dataset.target; });
+  } else {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animate(e.target); co.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { co.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>

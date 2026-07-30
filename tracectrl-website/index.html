@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketing Lead Submission — CloudsineAI · FY2026–28 Strategy</title>
+<meta name="description" content="Marketing Lead take-home submission: brand-awareness programme, lead-generation engine, marketing closed loop and TraceCtrl product-marketing kit for CloudsineAI.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;650;700&family=Instrument+Sans:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B1120; --ink2:#0A0F1C; --card:#141E33; --card2:#1B2942;
+    --teal:#2DD4BF; --amber:#F5B85C; --body:#8FA0B8;
+    --border:rgba(255,255,255,.08); --border-hi:rgba(255,255,255,.18);
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--ink);color:#E6ECF5;font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Instrument Sans','Inter',ui-sans-serif,system-ui,sans-serif;font-weight:700;letter-spacing:-0.02em}
+  .mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .kicker{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+  .body-copy{color:var(--body);max-width:68ch}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px}
+  .card-2{background:var(--card2)}
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .18s ease-out,transform .18s ease-out;transition-delay:var(--d,0ms)}
+  .reveal.in{opacity:1;transform:none}
+  .hoverable{transition:border-color .18s ease-out,transform .18s ease-out}
+  @media(hover:hover){.hoverable:hover{border-color:var(--border-hi);transform:translateY(-2px)}}
+  .bar{height:100%;border-radius:4px;background:var(--teal);transform-origin:left;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1) var(--bd,0s)}
+  .in .bar,.bar.in{transform:scaleX(1)}
+  table{border-collapse:collapse}
+  .tbl th{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--body);font-weight:500;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border)}
+  .tbl td{font-size:13.5px;color:#CBD5E4;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top}
+  .tbl tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid var(--border)}
+  .pill-teal{color:var(--teal);border-color:rgba(45,212,191,.35)}
+  .pill-amber{color:var(--amber);border-color:rgba(245,184,92,.35)}
+  .pill-dim{color:var(--body)}
+  .num{font-family:'JetBrains Mono',monospace;color:var(--teal)}
+  .glow{background:radial-gradient(600px 320px at 50% 40%, rgba(45,212,191,.07), transparent 70%)}
+  .section-rule{border-top:1px solid var(--border)}
+  /* Tabs */
+  .tabbtn{font-size:13px;color:var(--body);padding:9px 14px;border-radius:10px;border:1px solid transparent;white-space:nowrap;cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+  .tabbtn:hover{color:#fff}
+  .tabbtn.active{color:#fff;background:rgba(45,212,191,.08);border-color:rgba(45,212,191,.35)}
+  .tabbtn .tnum{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--teal);margin-right:6px}
+  .tabpane{display:none}
+  .tabpane.active{display:block}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .bar{transform:scaleX(1);transition:none}
+    .hoverable{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV / TABS ============ -->
+<header class="fixed top-0 inset-x-0 z-50 border-b border-white/[.06]" style="background:rgba(11,17,32,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="h-14 flex items-center justify-between">
+      <a href="#exec" data-tab-link="exec" class="flex items-baseline gap-2">
+        <span class="display text-[15px] text-white">CloudsineAI</span>
+        <span class="text-white/25 text-sm" aria-hidden="true">/</span>
+        <span class="mono text-[12px]" style="color:var(--teal)">Marketing Lead Submission</span>
+      </a>
+      <span class="mono hidden md:inline text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 border border-white/10 rounded-md px-3 py-1.5">Candidate assessment · July 2026</span>
+    </div>
+    <nav class="flex gap-1.5 pb-3 overflow-x-auto" aria-label="Sections" role="tablist">
+      <button class="tabbtn" data-tab="exec" role="tab">Thesis</button>
+      <button class="tabbtn" data-tab="brand" role="tab"><span class="tnum">01</span>Brand awareness</button>
+      <button class="tabbtn" data-tab="leadgen" role="tab"><span class="tnum">02</span>Lead generation</button>
+      <button class="tabbtn" data-tab="loop" role="tab"><span class="tnum">03</span>Marketing loop</button>
+      <button class="tabbtn" data-tab="kit" role="tab"><span class="tnum">04</span>TraceCtrl product marketing</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="pt-[104px]">
+
+<!-- ================================================================
+     TAB · EXECUTIVE SUMMARY (THESIS)
+     ================================================================ -->
+<section id="exec" class="tabpane" role="tabpanel">
+  <!-- Hero -->
+  <div class="glow">
+    <div class="mx-auto max-w-6xl px-5 pt-16 md:pt-24 pb-14">
+      <p class="kicker reveal mb-6">Thesis · The one foundational insight</p>
+      <h1 class="display reveal text-white leading-[1.06] max-w-4xl" style="font-size:clamp(2.2rem,5vw,3.7rem);--d:60ms">
+        S$5M FY2028 ARR is a named-account, trust-accumulation problem — not a lead-generation problem.
+      </h1>
+      <p class="body-copy reveal mt-7 text-lg leading-relaxed" style="--d:120ms">
+        A four-deliverable system — demand engine, product-marketing kit, brand programme and measurement
+        loop — built from that single realisation. Roughly 23–35 net-new TraceCtrl deals across ten
+        quarters is one deal a month, and one deal a month is won on trust. Every structural choice in
+        this plan follows from it.
+      </p>
+    </div>
+  </div>
+
+  <!-- Arithmetic chain -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <div class="card reveal p-7 md:p-9">
+      <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-6">One arithmetic chain, no drift</h2>
+      <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-white text-2xl">S$5.0M</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">FY2028 ARR target</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-2xl" style="color:var(--teal)">S$3.35M</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">Net new required</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-white text-2xl">23–35</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">TraceCtrl deals</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-white text-2xl">~92</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">Qualified opps</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-white text-2xl">~280</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">Engaged accounts</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="display text-white text-2xl">~550</p><p class="mono text-[10.5px] uppercase tracking-[.08em] text-[#8FA0B8]/80 mt-1">Named universe</p></div>
+      </div>
+      <p class="mt-5 text-[14px] text-white/85">Therefore: this is a <span style="color:var(--teal)">named-account programme, not a lead funnel</span>. Nine meaningful account engagements a month — a precision problem, not a volume problem. No campaign in this plan exists to generate volume; every one exists to move a named account one stage.</p>
+    </div>
+  </div>
+
+  <!-- Modelling correction + activity ladder -->
+  <div class="mx-auto max-w-6xl px-5 pb-16 grid md:grid-cols-2 gap-5">
+    <div class="card reveal p-7">
+      <p class="kicker mb-4">The modelling correction</p>
+      <h3 class="display text-white text-xl mb-4">ARR is a stock, not a flow</h3>
+      <p class="text-sm leading-relaxed text-[#8FA0B8]">Working from an estimated FY2026 base of <span class="text-white/90">S$1.8M</span>, the actual marketing job is <span class="text-white/90">S$3.35M of net-new ARR</span> — not S$5M. Over-stating the job leads to over-investment in top-of-funnel.</p>
+      <div class="mt-6 space-y-3">
+        <div class="flex items-center gap-3"><span class="num text-sm w-16">S$1.8M</span><div class="flex-1 h-2 rounded bg-white/[.06]"><div class="bar" style="width:36%;--bd:.1s"></div></div><span class="mono text-[10.5px] text-[#8FA0B8]/70 w-24">FY2026 base</span></div>
+        <div class="flex items-center gap-3"><span class="num text-sm w-16">S$3.35M</span><div class="flex-1 h-2 rounded bg-white/[.06]"><div class="bar" style="width:67%;--bd:.25s"></div></div><span class="mono text-[10.5px] text-[#8FA0B8]/70 w-24">Net new to build</span></div>
+        <div class="flex items-center gap-3"><span class="num text-sm w-16">S$5.0M</span><div class="flex-1 h-2 rounded bg-white/[.06]"><div class="bar" style="width:100%;--bd:.4s"></div></div><span class="mono text-[10.5px] text-[#8FA0B8]/70 w-24">FY2028 stock</span></div>
+      </div>
+    </div>
+    <div class="card reveal p-7" style="--d:80ms">
+      <p class="kicker mb-4">The activity ladder</p>
+      <h3 class="display text-white text-xl mb-4">Working backwards from 23 deals</h3>
+      <div class="space-y-3">
+        <div class="rounded-xl border border-white/[.07] p-4 flex items-baseline gap-4"><span class="display text-2xl text-white w-16">~550</span><div><p class="text-sm text-white/90">Named target accounts</p><p class="text-[12px] text-[#8FA0B8]">Universe identified and tiered</p></div></div>
+        <div class="rounded-xl border border-white/[.07] p-4 flex items-baseline gap-4"><span class="display text-2xl text-white w-16">~276</span><div><p class="text-sm text-white/90">Genuinely engaged accounts</p><p class="text-[12px] text-[#8FA0B8]">~50% of universe reachable</p></div></div>
+        <div class="rounded-xl border border-white/[.07] p-4 flex items-baseline gap-4"><span class="display text-2xl text-white w-16">~92</span><div><p class="text-sm text-white/90">Qualified opportunities</p><p class="text-[12px] text-[#8FA0B8]">1 in 3 engaged accounts converts</p></div></div>
+        <div class="rounded-xl border p-4 flex items-baseline gap-4" style="border-color:rgba(45,212,191,.35)"><span class="display text-2xl w-16" style="color:var(--teal)">23</span><div><p class="text-sm text-white/90">Closed-won deals</p><p class="text-[12px] text-[#8FA0B8]">25% win rate from SQO</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Revenue split -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The revenue split</p>
+    <div class="card reveal overflow-x-auto" style="--d:60ms">
+      <table class="tbl w-full min-w-[640px]">
+        <thead><tr><th>Pillar</th><th>FY2028 ARR</th><th>Share</th><th>Deals</th></tr></thead>
+        <tbody>
+          <tr><td class="text-white/90">P2 — Public sector SG</td><td class="num">S$1.85M</td><td>37%</td><td>~8 TraceCtrl</td></tr>
+          <tr><td class="text-white/90">P3 — Banks / FSI SG+ASEAN</td><td class="num">S$1.45M</td><td>29%</td><td>~9 TraceCtrl</td></tr>
+          <tr><td class="text-white/90">P1 — Mid-market ASEAN</td><td class="num">S$1.15M</td><td>23%</td><td>~33 WebOrion</td></tr>
+          <tr><td class="text-white/90">P4 — ANZ (gated)</td><td class="num">S$0.55M</td><td>11%</td><td>~4 TraceCtrl</td></tr>
+          <tr><td class="text-white font-medium">Total</td><td class="num">S$5.00M</td><td class="text-white/90">100%</td><td class="text-white/90">~23 TC deals</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal mt-4 rounded-xl border p-5 text-sm leading-relaxed" style="border-color:rgba(245,184,92,.3);color:#E8D5B5;--d:120ms">
+      <span class="pill pill-amber mr-2">Pre-committed</span> P4 (ANZ) receives zero direct demand-generation budget until it clears a gate: one signed anchor partner with three qualified introductions by end Q2 FY2027. If the gate is missed, budget transfers to P3. In writing.
+    </div>
+  </div>
+
+  <!-- Five commitments -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Five commitments</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="card hoverable reveal p-6"><p class="num text-sm mb-3">01</p><h3 class="display text-white text-base mb-2">Concentrate where advantages compound</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Public sector SG (37%) and regulated FSI (29%) receive the weight; sovereignty is a bid qualifier, not a preference.</p></div>
+      <div class="card hoverable reveal p-6" style="--d:60ms"><p class="num text-sm mb-3">02</p><h3 class="display text-white text-base mb-2">Sell to the pain, not the segment</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Four buyers, four different purchases of the same product — each mapped to a distinct trigger.</p></div>
+      <div class="card hoverable reveal p-6" style="--d:120ms"><p class="num text-sm mb-3">03</p><h3 class="display text-white text-base mb-2">Own the Accountability Gap</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">The narrative is the gap between what your agents did and what you can prove they did.</p></div>
+      <div class="card hoverable reveal p-6" style="--d:180ms"><p class="num text-sm mb-3">04</p><h3 class="display text-white text-base mb-2">Publish an instrument, not content</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">The Agent Accountability Index: annual flagship, quarterly updates, citable by analysts and regulators.</p></div>
+      <div class="card hoverable reveal p-6" style="--d:240ms"><p class="num text-sm mb-3">05</p><h3 class="display text-white text-base mb-2">Measure honestly at small n</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Engaged target accounts, pipeline coverage ratio, and a monthly Pipeline Council — not algorithmic attribution.</p></div>
+    </div>
+  </div>
+
+  <!-- Competitive landscape -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The competitive landscape · what the M&amp;A wave means for us</p>
+    <h2 class="display reveal text-white text-2xl md:text-3xl max-w-2xl leading-tight mb-8" style="--d:60ms">The independent tier of this category has been consolidated. Every acquisition sharpens the same argument.</h2>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card reveal p-6"><h3 class="display text-white text-base mb-2">Platform consolidators</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Palo Alto (Protect AI → Prisma AIRS 3.0), Check Point (Lakera, ~US$300M), SentinelOne (Prompt Security), Cato (Aim Security), Cisco (Robust Intelligence). Every acquired rival is now a US platform company.</p><p class="mt-3 text-[13px]" style="color:var(--teal)">How to play it: "Where does your agent telemetry live during an incident?" Data residency and on-premise form factors win what a bundled module cannot.</p></div>
+      <div class="card reveal p-6" style="--d:60ms"><h3 class="display text-white text-base mb-2">Independent pure-plays — Zenity</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Gartner Cool Vendor in Agentic AI TRiSM. Strong US enterprise SaaS footprint. Publishes novel exploit research including AgentFlayer.</p><p class="mt-3 text-[13px]" style="color:var(--teal)">How to play it: respect them openly. "Strong platform, built for US enterprise. Ask them about data residency in Singapore, on-premise deployment, and MAS mapping — then ask us."</p></div>
+      <div class="card reveal p-6" style="--d:120ms"><h3 class="display text-white text-base mb-2">LLM observability tools</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Datadog LLM Observability, Langfuse, Arize — already deployed, already budgeted, incumbent relationship.</p><p class="mt-3 text-[13px]" style="color:var(--teal)">How to play it: never argue replacement. "They tell you the agent ran. We tell you whether it was safe. Different question, different tool."</p></div>
+      <div class="card card-2 reveal p-6" style="--d:180ms;border-color:rgba(45,212,191,.3)"><h3 class="display text-base mb-2" style="color:var(--teal)">The sovereign closer</h3><p class="text-[13px] leading-relaxed text-white/85">Each acquisition empties the "independent vendor who can deploy in your jurisdiction" column further. The sovereignty argument gets sharper with every deal — and the acquirers' valuations validate the category. Borrow that in every deck.</p></div>
+    </div>
+  </div>
+
+  <!-- Proof points -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Five proof points to repeat</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">Message discipline means repetition past the point of boredom. Five, and only five.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="card reveal p-5"><p class="display text-white text-[15px] mb-1.5">14 years of security heritage</p><p class="text-[12px] text-[#8FA0B8]">Singapore-founded in 2012. Not a startup betting on a trend.</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="display text-white text-[15px] mb-1.5">Region's largest GenAI deployment</p><p class="text-[12px] text-[#8FA0B8]">Up to 100 GenAI applications. Public sector. On the record.</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="display text-white text-[15px] mb-1.5">TAGAAI proves exploitability</p><p class="text-[12px] text-[#8FA0B8]">Not theoretical scoring — validated attack paths with evidence attached.</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="display text-white text-[15px] mb-1.5">Sovereign form factors</p><p class="text-[12px] text-[#8FA0B8]">SaaS, on-premise, appliance. The right to sell where others structurally cannot.</p></div>
+      <div class="card reveal p-5" style="--d:200ms"><p class="display text-white text-[15px] mb-1.5">We run on agentic AI ourselves</p><p class="text-[12px] text-[#8FA0B8]">We secure what we run. The marketing function is itself a proof point.</p></div>
+    </div>
+    <div class="reveal mt-8 card card-2 p-7 text-center" style="--d:240ms">
+      <p class="display text-white text-xl md:text-2xl">You cannot govern what you cannot trace.</p>
+      <p class="mono mt-2 text-[12px] tracking-[.08em]" style="color:var(--teal)">Trace Your Agents. Control Your Risks.</p>
+    </div>
+  </div>
+
+  <!-- Tab directory -->
+  <div class="mx-auto max-w-6xl px-5 pb-24">
+    <p class="kicker reveal mb-5">The four deliverables</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <button data-tab-link="brand" class="card hoverable reveal p-5 text-left cursor-pointer"><p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-2">Tab 01</p><p class="display text-white text-base mb-1">Brand awareness</p><p class="text-[12.5px] text-[#8FA0B8]">A 12-month recognition programme: unaided recall 0 → 3 in 10.</p></button>
+      <button data-tab-link="leadgen" class="card hoverable reveal p-5 text-left cursor-pointer" style="--d:60ms"><p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-2">Tab 02</p><p class="display text-white text-base mb-1">Lead generation</p><p class="text-[12.5px] text-[#8FA0B8]">The demand engine: stages, 8 triggers, 13 plays, 280 accounts.</p></button>
+      <button data-tab-link="loop" class="card hoverable reveal p-5 text-left cursor-pointer" style="--d:120ms"><p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-2">Tab 03</p><p class="display text-white text-base mb-1">Marketing loop</p><p class="text-[12.5px] text-[#8FA0B8]">Honest measurement, pre-committed gates, S$540K budget.</p></button>
+      <button data-tab-link="kit" class="card hoverable reveal p-5 text-left cursor-pointer" style="--d:180ms"><p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-2">Tab 04</p><p class="display text-white text-base mb-1">TraceCtrl product marketing</p><p class="text-[12.5px] text-[#8FA0B8]">The 14-part kit — personas, positioning, battlecards, and the live landing page.</p></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+     TAB 01 · BRAND AWARENESS
+     ================================================================ -->
+<section id="brand" class="tabpane" role="tabpanel">
+  <!-- Hero -->
+  <div class="glow">
+    <div class="mx-auto max-w-6xl px-5 pt-16 md:pt-24 pb-14">
+      <p class="kicker reveal mb-6">Tab 01 · Deliverable 3 · Cloudsine brand awareness</p>
+      <h1 class="display reveal text-white leading-[1.06] max-w-4xl" style="font-size:clamp(2rem,4.5vw,3.4rem);--d:60ms">
+        A twelve-month recognition programme. Regionally first, globally relevant.
+      </h1>
+      <p class="body-copy reveal mt-7 text-lg leading-relaxed" style="--d:120ms">
+        Built on borrowed distribution, not bought attention.
+      </p>
+      <div class="reveal mt-8 card card-2 inline-block px-6 py-4" style="--d:160ms">
+        <p class="text-[15px] text-white/90">The one number: <span class="display" style="color:var(--teal)">unaided recall from 0 → 3 in 10</span> target buyers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Diagnosis -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The diagnosis · substance without salience</p>
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card reveal p-7">
+        <h3 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-5">What CloudsineAI has</h3>
+        <ul class="text-sm leading-7 text-white/85 space-y-1">
+          <li>· 14 years of security engineering</li>
+          <li>· 41 customers across 5 countries</li>
+          <li>· 246 adversarial tests every month</li>
+          <li>· 44+ vulnerability records, 37 model versions</li>
+          <li>· One of the region's largest GenAI deployments</li>
+        </ul>
+        <p class="mt-5 text-[13px]" style="color:var(--teal)">Real. Verifiable. Unusual.</p>
+      </div>
+      <div class="card reveal p-7" style="--d:80ms">
+        <h3 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-5">What the market knows</h3>
+        <p class="display text-white text-3xl">Almost nothing.</p>
+        <p class="mt-4 text-sm leading-relaxed text-[#8FA0B8]">Not a quality problem. Not a product problem. Not even a messaging problem. It is a <span class="text-white/90">distribution problem</span> — genuinely valuable material, published where only people who already know the company will find it.</p>
+        <p class="mt-4 text-sm text-[#8FA0B8]">Advertising buys attention that stops when you stop paying. <span style="color:var(--teal)">Research buys citation, which compounds.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core move: the Index -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The core move · the Agent Accountability Index</p>
+    <h2 class="display reveal text-white text-2xl md:text-3xl max-w-3xl leading-tight mb-6" style="--d:60ms">Consolidate the red-team reports, the LVD and the benchmark into one named, recurring, citable instrument.</h2>
+    <div class="card card-2 reveal p-6 mb-6" style="--d:100ms">
+      <p class="text-[15px] leading-relaxed text-white/90 italic">"According to CloudsineAI's Agent Accountability Index, X% of regulated Asia-Pacific organisations cannot produce an inventory of their AI agents."</p>
+      <p class="mt-3 text-[13px] text-[#8FA0B8]">That sentence — repeated in an analyst note, a consultancy deck, a keynote, a board pack — is the awareness engine. It arrives with our name attached, in a context of authority, without us paying for placement or even being present.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card reveal p-6"><p class="num text-sm mb-3">1</p><h3 class="display text-white text-base mb-2">Adversarial benchmark</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">The existing red-team programme — formalised, versioned, documented, comparable year over year.</p></div>
+      <div class="card reveal p-6" style="--d:60ms"><p class="num text-sm mb-3">2</p><h3 class="display text-white text-base mb-2">Practitioner survey</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">n ≥ 250 across regulated APAC on agent deployment rates, governance maturity and incident experience. The source of the quotable statistics.</p></div>
+      <div class="card reveal p-6" style="--d:120ms"><p class="num text-sm mb-3">3</p><h3 class="display text-white text-base mb-2">Vulnerability corpus</h3><p class="text-[13px] leading-relaxed text-[#8FA0B8]">The LVD as a public utility — citable schema, ASR and CVSS scoring, stable URLs.</p></div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 mt-5">
+      <div class="reveal rounded-xl border border-white/[.08] p-5 text-[13px] leading-relaxed text-[#8FA0B8]"><span class="pill pill-teal mr-2">Index, not report</span> A report is read once. An index is recurring, versioned and comparable — so it becomes a reference. References get bookmarked, cited, and waited for.</div>
+      <div class="reveal rounded-xl border border-white/[.08] p-5 text-[13px] leading-relaxed text-[#8FA0B8]" style="--d:60ms"><span class="pill pill-teal mr-2">Ungated</span> All three components are built from assets that already exist. The summary stays ungated — gating the headline number defeats the purpose. One research programme atomises into roughly 40 derivative pieces.</div>
+    </div>
+  </div>
+
+  <!-- Organising principle -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The organising principle · borrow distribution until you own it</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">At S$540K against competitors whose marketing budgets exceed our revenue, competing for attention directly is arithmetic we lose. Every mechanism arrives inside someone else's existing attention — and each of these compounds. Advertising does the opposite: it stops existing the moment you stop paying.</p>
+    <div class="card reveal overflow-x-auto" style="--d:80ms">
+      <table class="tbl w-full min-w-[560px]">
+        <thead><tr><th>Whose attention</th><th>What we give them</th><th>What they get</th></tr></thead>
+        <tbody>
+          <tr><td class="text-white/90">Journalists</td><td>Original research, named findings</td><td>The story and statistic they need</td></tr>
+          <tr><td class="text-white/90">Analysts</td><td>Briefings, data, early access</td><td>Primary evidence for their coverage</td></tr>
+          <tr><td class="text-white/90">Regulators</td><td>Consultation responses, testing</td><td>Technical capability they lack in-house</td></tr>
+          <tr><td class="text-white/90">Buyers</td><td>Peer convening</td><td>A room worth being in</td></tr>
+          <tr><td class="text-white/90">The category</td><td>Terminology</td><td>A word the market needs</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Mechanisms ranked -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The mechanisms, ranked by leverage</p>
+    <div class="space-y-5">
+      <div class="card reveal p-6">
+        <p class="pill pill-teal mb-4">Tier 1 · Creates recognition from zero</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">①</span>Named vulnerability research</p><p class="text-[12.5px] text-[#8FA0B8] mt-1">The industry's native recognition mechanism</p></div>
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">②</span>The Index</p><p class="text-[12.5px] text-[#8FA0B8] mt-1">Manufacture the statistic others need</p></div>
+        </div>
+      </div>
+      <div class="card reveal p-6" style="--d:60ms">
+        <p class="pill pill-dim mb-4">Tier 2 · Converts recognition into legitimacy</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">③</span>Analyst inclusion</p><p class="text-[12.5px] text-[#8FA0B8] mt-1">The shortlist mechanism. Absence is a silent disqualifier — you never learn you were excluded.</p><p class="mono text-[11px] mt-2" style="color:var(--teal)">3 firms briefed · 1 inclusion</p></div>
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">④</span>Regulator proximity</p><p class="text-[12.5px] text-[#8FA0B8] mt-1">IMDA, MAS, CSA, AI Verify. Structurally unavailable to US/EU/Israeli competitors. Nearly free.</p><p class="mono text-[11px] mt-2" style="color:var(--teal)">4 responses · 1 working group</p></div>
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">⑤</span>Published references</p><p class="text-[12.5px] text-[#8FA0B8] mt-1">Peer proof is the shortest path through scepticism. Escalate: anonymised → named → case study → reference call.</p><p class="mono text-[11px] mt-2" style="color:var(--teal)">2 references, one per pillar</p></div>
+        </div>
+        <p class="mt-4 text-[13px] text-[#8FA0B8]">Awareness alone produces nothing here — security buyers discount vendor claims by default. The only currency is third-party validation: every mechanism above is a way of having someone else say it.</p>
+      </div>
+      <div class="card reveal p-6" style="--d:120ms">
+        <p class="pill pill-dim mb-4">Tier 3 · Compounds and defends</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">⑥</span>The named community</p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8] mt-1">Roundtables as events are a tactic. Named, standing, with membership — an institution. Name it; membership, not an invite list. Private channel year-round. Quarterly SG, then Jakarta and KL. Anonymised synthesis after each session. Members become advocates — and it IS the P2/P3 pipeline motion.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90"><span class="num mr-2">⑦</span>Category language — <span style="color:var(--teal)">AgentSecOps</span></p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8] mt-1">Discover → Assess → Test → Protect → Govern. If the market adopts your word, every future conversation happens on your terms. Ship a free maturity model and self-assessment built on the vocabulary — and the vocabulary comes with it. Target: 5+ independent third parties using the term unprompted.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mechanism 1 detail -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Mechanism ① · the highest-leverage move available</p>
+    <h2 class="display reveal text-white text-2xl md:text-3xl max-w-3xl leading-tight mb-6" style="--d:60ms">Named vulnerability research</h2>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:80ms">The security industry has one native recognition mechanism: you find something, name it, disclose it responsibly, and the industry repeats your name while discussing your finding.</p>
+    <div class="grid md:grid-cols-2 gap-5 mb-5">
+      <div class="card reveal p-6"><p class="pill pill-teal mb-3">Already have — 80% of the way there</p><p class="text-[13px] leading-relaxed text-[#8FA0B8]">246 adversarial tests a month · ~25% attack success rate · LVD with 44+ records across 37 model versions. This is exactly the raw material.</p></div>
+      <div class="card reveal p-6" style="--d:60ms"><p class="pill pill-amber mb-3">What's missing</p><p class="text-[13px] leading-relaxed text-[#8FA0B8]">Findings are aggregated into monthly statistics rather than isolated, named and disclosed as discrete research. <span class="text-white/90">A statistic is forgettable. A named finding is an event.</span></p></div>
+    </div>
+    <div class="card reveal overflow-x-auto mb-4" style="--d:100ms">
+      <table class="tbl w-full min-w-[640px]">
+        <thead><tr><th>Named research unit</th><th>Named human lead</th><th>Isolate novel findings</th><th>Coordinated disclosure</th><th>Publish + submit globally</th></tr></thead>
+        <tbody><tr><td>More citable than a vendor</td><td>Security is personality-driven</td><td>Not statistics — events</td><td>Ethics earn standing</td><td>Travels without a passport</td></tr></tbody>
+      </table>
+    </div>
+    <p class="reveal text-[14px] text-white/85" style="--d:120ms">Target: <span style="color:var(--teal)">2 named findings in 12 months.</span> One would be transformative. Highest-variance, highest-return line in the programme.</p>
+  </div>
+
+  <!-- Exclusions -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Stating exclusions is part of the plan · what does not move the needle</p>
+    <div class="card reveal overflow-x-auto" style="--d:60ms">
+      <table class="tbl w-full min-w-[560px]">
+        <tbody>
+          <tr><td class="text-white/90 whitespace-nowrap">Paid advertising for awareness</td><td>210 named accounts. Buying impressions against a population that small is arithmetically absurd.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Conference booths</td><td>Badge scans are worthless when you need 23 deals. Speaking builds authority; stands buy foot traffic we cannot use.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Generic thought-leadership blogging</td><td>"Five trends in AI security" is invisible. Only proprietary material — data we own, findings we made — travels.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Brand campaigns and sponsorships</td><td>No compounding asset, no third-party validation, no distribution we don't pay for every single time.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Chasing follower counts</td><td>Followers are a lagging by-product of being worth following, not a target to optimise.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Recognition ladder -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The programme · the recognition ladder</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">Five levels, each a prerequisite for the next — the sequencing is not optional. Being cited before you are findable wastes the citation. Being named before you are credible produces scepticism.</p>
+    <div class="grid md:grid-cols-5 gap-4 mb-6">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-2">M1–3</p><p class="display text-white text-base mb-1.5">1 · Findable</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Can a buyer who hears our name understand us in 60 seconds?</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-2">M2–6</p><p class="display text-white text-base mb-1.5">2 · Citable</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Does anyone outside have a reason to mention us?</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-2">M4–9</p><p class="display text-white text-base mb-1.5">3 · Credible</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">When they check us out, does it hold up?</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-2">M6–12</p><p class="display text-white text-base mb-1.5">4 · Gathered</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Do we convene the conversation, or join it?</p></div>
+      <div class="card reveal p-5" style="--d:200ms;border-color:rgba(45,212,191,.35)"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-2">M9–12+</p><p class="display text-base mb-1.5" style="color:var(--teal)">5 · Named</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Does the category use our language?</p></div>
+    </div>
+    <div class="card reveal overflow-x-auto" style="--d:120ms">
+      <table class="tbl w-full min-w-[760px]">
+        <thead><tr><th>1 · Findable</th><th>2 · Citable</th><th>3 · Credible</th><th>4 · Gathered</th><th>5 · Named</th></tr></thead>
+        <tbody>
+          <tr><td>Assets on new architecture <span class="num">100%</span></td><td>Index survey respondents <span class="num">n ≥ 250</span></td><td>Analyst firms briefed <span class="num">3</span></td><td>Named forum members <span class="num">40+</span></td><td>3rd parties using our term <span class="num">5+</span></td></tr>
+          <tr><td>60-second comprehension test <span class="num">4 of 5</span></td><td>3rd-party citations <span class="num">15+</span></td><td>Landscape inclusion <span class="num">1</span></td><td>Community channel <span class="num">100+</span></td><td>Inbound share of new S2 <span class="num">20%</span></td></tr>
+          <tr><td>LinkedIn followers <span class="num">2.5k → 4k</span></td><td>Earned media mentions <span class="num">10+</span></td><td>Speaking slots <span class="num">4</span></td><td>Roundtables run <span class="num">4</span></td><td>Named findings total <span class="num">2</span></td></tr>
+          <tr><td>Newsletter subscribers <span class="num">0 → 500</span></td><td>Named findings disclosed <span class="num">1</span></td><td>Published references <span class="num">2</span></td><td>Assessment completions <span class="num">100+</span></td><td>Unaided recall <span class="num">3 of 10</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal mt-4 mono text-[11.5px] tracking-[.04em] text-[#8FA0B8]" style="--d:160ms">Unaided recall is the only metric that genuinely measures "a recognised name" — ten structured interviews, the open question asked before any prompting.</p>
+  </div>
+
+  <!-- Channel mix + regional -->
+  <div class="mx-auto max-w-6xl px-5 pb-16 grid md:grid-cols-2 gap-5">
+    <div class="card reveal p-7">
+      <p class="kicker mb-4">The channel mix · weighted by mechanism, not convention</p>
+      <ul class="space-y-4 text-[13px] leading-relaxed text-[#8FA0B8]">
+        <li><span class="text-white/90 block mb-0.5">The category has no search volume</span>Demand cannot be captured — only created. A capture-led mix has nothing to capture.</li>
+        <li><span class="text-white/90 block mb-0.5">The audience is small and sceptical</span>210 accounts. One CISO reading a named finding outweighs 10,000 impressions.</li>
+        <li><span class="text-white/90 block mb-0.5">The gap is salience, not substance</span>When the substance exists, the fix is publishing — advertising is what you buy when you have nothing to say.</li>
+        <li><span class="text-white/90 block mb-0.5">One person can only afford compounding</span>Research is cited for years. Ads vanish when the budget does.</li>
+      </ul>
+    </div>
+    <div class="card reveal p-7" style="--d:80ms">
+      <p class="kicker mb-4">Regionally first, globally relevant</p>
+      <ul class="space-y-4 text-[13px] leading-relaxed text-[#8FA0B8]">
+        <li><span class="text-white/90 block mb-0.5">Singapore's AI governance is already globally watched</span>Being the visible security contributor inside that conversation confers international legibility for free.</li>
+        <li><span class="text-white/90 block mb-0.5">Research crosses borders without a passport</span>A named finding or rigorous benchmark is judged on merit, not origin — as citable in San Francisco as in Singapore.</li>
+        <li><span class="text-white/90 block mb-0.5">Sovereignty as a principle, not a local complaint</span>Every jurisdiction outside the US is having this conversation — EU, India, the Gulf, Japan.</li>
+      </ul>
+      <p class="mt-5 text-[13px] text-white/85">"Singapore AI security vendor" is a local story. <span style="color:var(--teal)">"What regulated Asia learned about AI sovereignty first" is a global one.</span></p>
+    </div>
+  </div>
+
+  <!-- Brand = pipeline -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The usual objection, answered · brand does not compete with pipeline</p>
+    <div class="card reveal overflow-x-auto mb-4" style="--d:60ms">
+      <table class="tbl w-full min-w-[560px]">
+        <tbody>
+          <tr><td class="text-white/90 whitespace-nowrap">The Index</td><td>The reason to contact 280 named accounts. Sector cuts become ABM briefs.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Named research</td><td>The artefact that earns a first meeting with a CISO who ignores outreach.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">The named forum</td><td>IS plays P2-1 and P3-2 — the primary pipeline motion. 8 engaged per session.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Analyst inclusion</td><td>Procurement infrastructure. Removes a silent disqualifier at shortlist.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">Regulator proximity</td><td>Access to the rooms where P2 relationships originate.</td></tr>
+          <tr><td class="text-white/90 whitespace-nowrap">AgentSecOps</td><td>Every future buyer conversation happens in our vocabulary.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal card card-2 p-6 text-[14px] leading-relaxed text-white/85" style="--d:100ms">
+      The honest version: at 23–35 deals, there is no volume-demand machine to fund. The pipeline motion IS research-led ABM and peer convening. Cutting brand to fund demand would remove the mechanism by which demand is generated. <span style="color:var(--teal)">They are not two budgets — they are one motion.</span>
+    </div>
+  </div>
+
+  <!-- 12-month build + calendar -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Twelve months, mapped to the ladder</p>
+    <div class="card reveal p-6 mb-6" style="--d:60ms">
+      <p class="mono text-[11px] tracking-[.1em] uppercase text-[#8FA0B8] mb-4">Flagship moves · the build sequence</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="pill pill-dim">M1 · Site live</span><span class="pill pill-dim">M2 · Rapid response</span><span class="pill pill-teal">M4 · Finding #1</span><span class="pill pill-teal">M5 · Index v1</span><span class="pill pill-dim">M6 · Forum 1</span><span class="pill pill-dim">M7 · Forum launch</span><span class="pill pill-dim">M8 · Maturity model</span><span class="pill pill-teal">M11 · Finding #2</span><span class="pill pill-dim">M12 · Recall test</span>
+      </div>
+      <p class="mt-4 text-[12.5px] text-[#8FA0B8]">Levels overlap deliberately — L2 begins before L1 completes. What cannot overlap is the order of completion.</p>
+    </div>
+    <div class="grid md:grid-cols-5 gap-4">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Q3 2026</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Narrative platform launch. Site and message architecture rebuilt on the Accountability Gap. Index survey fielded. Analyst briefings booked. Rapid-response machinery live. Two customer references in production.</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Q4 2026</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Agent Accountability Index v1 published. Launch webinar and media push. First P2 public-sector roundtable. First analyst briefing round completed. GovWare presence secured.</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Q1 2027</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Index Q1 update + public-sector cut. First FSI roundtable. Regulator working-group participation. Developer content series launched. Black Hat Asia speaking submission made.</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Q2 2027</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Index Q2 update + FSI cut + MAS control-mapping paper. Second roundtable cycle. First named FI reference secured. ANZ analyst briefings. P4 gate assessed — pass or transfer to P3.</p></div>
+      <div class="card reveal p-5" style="--d:200ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Q3 2027</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Index Q3 update + ANZ cut. ANZ roundtable if gated in. Second-voice thought leadership launched. Conference keynote delivered. Second-wave research scoped for FY2028.</p></div>
+    </div>
+    <div class="reveal mt-5 rounded-xl border p-5 text-sm leading-relaxed" style="border-color:rgba(245,184,92,.3);color:#E8D5B5;--d:240ms">
+      <span class="pill pill-amber mr-2">Agree in writing</span> Phase 1 (now → Dec 2026) is judged on assets, not pipeline. This must be agreed within the first 30 days — before the right plan looks like failure.
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="mx-auto max-w-6xl px-5 pb-24">
+    <div class="card card-2 reveal p-8 md:p-10 text-center">
+      <p class="kicker mb-4">Twelve months from now</p>
+      <p class="display text-white" style="font-size:clamp(2rem,4.5vw,3rem)">3 in 10</p>
+      <p class="mt-3 text-[15px] text-white/85 max-w-xl mx-auto">target buyers name CloudsineAI unprompted when asked about agent security in Asia-Pacific. From a standing start of roughly zero.</p>
+      <p class="mt-5 text-[13px] text-[#8FA0B8] max-w-2xl mx-auto">Protected at any budget: research, analyst relations, the forum — recognition, legitimacy, convening position. Lose one and the ladder has a missing rung, and the ladder does not work with a rung missing.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     TAB 02 · LEAD GENERATION
+     ================================================================ -->
+<section id="leadgen" class="tabpane" role="tabpanel">
+  <!-- Hero -->
+  <div class="glow">
+    <div class="mx-auto max-w-6xl px-5 pt-16 md:pt-24 pb-14">
+      <p class="kicker reveal mb-6">Tab 02 · Deliverable 1 · The execution layer</p>
+      <h1 class="display reveal text-white leading-[1.06] max-w-4xl" style="font-size:clamp(2rem,4.5vw,3.4rem);--d:60ms">
+        The demand engine: how one marketer moves 280 named accounts.
+      </h1>
+      <p class="body-copy reveal mt-7 text-lg leading-relaxed" style="--d:120ms">
+        Across four pillars — the stages, the triggers, the plays, and the calendar.
+      </p>
+      <p class="mono reveal mt-8 text-[12.5px] tracking-[.04em]" style="color:var(--teal);--d:160ms">S$5M → S$3.35M net new → 23–35 deals → ~92 opportunities → 280 engaged accounts</p>
+    </div>
+  </div>
+
+  <!-- Mission map -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The mission map · four markets, four different routes to trust</p>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-1">P2 · 37% ARR</p><p class="display text-white text-base mb-1.5">Public sector SG</p><p class="text-[12.5px]" style="color:var(--teal)">Peers + frameworks</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-1">P3 · 29% ARR</p><p class="display text-white text-base mb-1.5">Banks &amp; FSI</p><p class="text-[12.5px]" style="color:var(--teal)">Regulation + proof</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-1">P1 · 23% ARR</p><p class="display text-white text-base mb-1.5">Mid-market ASEAN</p><p class="text-[12.5px]" style="color:var(--teal)">Partners + intent</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] text-[#8FA0B8]/70 mb-1">P4 · 11% ARR</p><p class="display text-white text-base mb-1.5">ANZ</p><p class="text-[12.5px]" style="color:var(--amber)">Gated beachhead</p></div>
+    </div>
+    <p class="reveal mt-5 text-[14px] text-white/85" style="--d:180ms">One funnel would destroy the economics. <span style="color:var(--teal)">Named-account coverage for P2/P3/P4. Transaction-level measurement for P1.</span></p>
+  </div>
+
+  <!-- Stage model -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Part A · The operating system · six stages, each with a hard entry test</p>
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="md:col-span-2 space-y-3">
+        <div class="card reveal p-4 flex items-center gap-4"><span class="num text-sm w-8">S0</span><div><p class="text-sm text-white/90">Named</p><p class="text-[12px] text-[#8FA0B8]">On the list, researched, tiered</p></div></div>
+        <div class="card reveal p-4 flex items-center gap-4" style="--d:40ms"><span class="num text-sm w-8">S1</span><div><p class="text-sm text-white/90">Reached</p><p class="text-[12px] text-[#8FA0B8]">≥1 logged touch to a named buyer</p></div></div>
+        <div class="card reveal p-4 flex items-center gap-4" style="--d:80ms;border-color:rgba(45,212,191,.4)"><span class="num text-sm w-8">S2</span><div><p class="text-sm" style="color:var(--teal)">Engaged ★</p><p class="text-[12px] text-[#8FA0B8]">A named buyer interacts two-way</p></div></div>
+        <div class="card reveal p-4 flex items-center gap-4" style="--d:120ms"><span class="num text-sm w-8">S3</span><div><p class="text-sm text-white/90">Qualified conversation</p><p class="text-[12px] text-[#8FA0B8]">Discovery held; gates cleared</p></div></div>
+        <div class="card reveal p-4 flex items-center gap-4" style="--d:160ms"><span class="num text-sm w-8">S4</span><div><p class="text-sm text-white/90">Opportunity</p><p class="text-[12px] text-[#8FA0B8]">Mapping session; need + authority + timeline</p></div></div>
+        <div class="card reveal p-4 flex items-center gap-4" style="--d:200ms"><span class="num text-sm w-8">S5</span><div><p class="text-sm text-white/90">Closed won</p><p class="text-[12px] text-[#8FA0B8]">Contract signed</p></div></div>
+      </div>
+      <div class="card card-2 reveal p-6" style="--d:120ms">
+        <p class="pill pill-teal mb-4">S2 is the north star</p>
+        <p class="text-[13.5px] leading-relaxed text-white/85">The only leading indicator that predicts pipeline at a 6–12 month cycle. Weekly reporting tracks S2 and nothing else.</p>
+        <p class="mt-4 text-[13px] leading-relaxed text-[#8FA0B8]">A newsletter signup is not S2. If it needs no human at the account to choose to spend attention, it is not engagement.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ramp + universe -->
+  <div class="mx-auto max-w-6xl px-5 pb-16 grid md:grid-cols-2 gap-5">
+    <div class="card reveal p-7">
+      <p class="kicker mb-4">Volume, ramped deliberately</p>
+      <div class="space-y-4">
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90">Foundations <span class="mono text-[11px] text-[#8FA0B8]/70 ml-2">Q3–Q4 2026</span></p><p class="text-[12.5px] text-[#8FA0B8] mt-1">Judged on assets, not pipeline. S2: 8 → 18. Low by design.</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90">Generation <span class="mono text-[11px] text-[#8FA0B8]/70 ml-2">FY2027</span></p><p class="text-[12.5px] text-[#8FA0B8] mt-1">Engine at full rate. The year that decides the target.</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="text-sm text-white/90">Conversion <span class="mono text-[11px] text-[#8FA0B8]/70 ml-2">FY2028</span></p><p class="text-[12.5px] text-[#8FA0B8] mt-1">Harvest + expansion. Judged on closed ARR.</p></div>
+      </div>
+      <p class="mono mt-4 text-[11.5px] text-[#8FA0B8]">Cumulative S2 sums to exactly 280. Total closed: 23–27 deals.</p>
+    </div>
+    <div class="card reveal p-7" style="--d:80ms">
+      <p class="kicker mb-4">The account universe · 210 named accounts, near-total coverage</p>
+      <div class="grid grid-cols-3 gap-3 mb-4">
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-xl">55<span class="text-[#8FA0B8] text-sm">/60</span></p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">P2 · 92%</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-xl">75<span class="text-[#8FA0B8] text-sm">/80</span></p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">P3 · 94%</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-xl">60<span class="text-[#8FA0B8] text-sm">/70</span></p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">P4 · 86%</p></div>
+      </div>
+      <p class="text-[12.5px] leading-relaxed text-[#8FA0B8]">P1 mid-market is measured differently, and that matters for reporting integrity: ~200+ accounts counted at the transaction level via partners and marketplace, never individually named. At S$15K per order, researching each account destroys the unit economics. Reported separately so it never inflates the ABM numbers.</p>
+    </div>
+  </div>
+
+  <!-- Trigger engine -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The operational core · the trigger engine</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">Segments describe the market. Triggers convert it. Rather than run campaigns at segments and hope timing aligns, the engine watches for the moment latent pain becomes an active purchase — and fires a defined play within a defined SLA.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+      <div class="card reveal p-4"><p class="num text-[11px] mb-1">T1</p><p class="text-[13px] text-white/90">Regulatory</p></div>
+      <div class="card reveal p-4" style="--d:30ms"><p class="num text-[11px] mb-1">T2</p><p class="text-[13px] text-white/90">Audit window</p></div>
+      <div class="card reveal p-4" style="--d:60ms;border-color:rgba(45,212,191,.4)"><p class="num text-[11px] mb-1">T3 ★</p><p class="text-[13px]" style="color:var(--teal)">New-in-role</p></div>
+      <div class="card reveal p-4" style="--d:90ms"><p class="num text-[11px] mb-1">T4</p><p class="text-[13px] text-white/90">Deployment</p></div>
+      <div class="card reveal p-4" style="--d:120ms"><p class="num text-[11px] mb-1">T5</p><p class="text-[13px] text-white/90">Industry incident</p></div>
+      <div class="card reveal p-4" style="--d:150ms"><p class="num text-[11px] mb-1">T6</p><p class="text-[13px] text-white/90">Peer incident</p></div>
+      <div class="card reveal p-4" style="--d:180ms"><p class="num text-[11px] mb-1">T7</p><p class="text-[13px] text-white/90">Competitive</p></div>
+      <div class="card reveal p-4" style="--d:210ms"><p class="num text-[11px] mb-1">T8</p><p class="text-[13px] text-white/90">Tender</p></div>
+    </div>
+    <div class="card card-2 reveal p-6" style="--d:200ms">
+      <p class="pill pill-teal mb-3">The highest-conversion trigger</p>
+      <p class="text-[13.5px] leading-relaxed text-white/85">T3 · New-in-role. A new CISO in month two is actively auditing what they inherited, and nobody is calling them with an inventory answer. Weekly LinkedIn monitoring, 2-week SLA, a useful artefact with no CTA. The most under-exploited moment in the category.</p>
+    </div>
+  </div>
+
+  <!-- Playbook -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Part B · The playbook · thirteen plays, four pillars</p>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8] mb-3">P2 · Public sector</p><ul class="text-[13px] leading-7 space-y-0.5 text-[#8FA0B8]"><li style="color:var(--teal)">Peer roundtable ★</li><li>Reference manufacturing</li><li>Procurement rails</li><li>Regulator proximity</li><li>New-in-role</li></ul></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8] mb-3">P3 · Banks &amp; FSI</p><ul class="text-[13px] leading-7 space-y-0.5 text-[#8FA0B8]"><li style="color:var(--teal)">Supervisory trigger ★</li><li>FSI roundtable</li><li>The ownership wedge</li><li>Analyst infrastructure</li></ul></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8] mb-3">P1 · Mid-market ASEAN</p><ul class="text-[13px] leading-7 space-y-0.5 text-[#8FA0B8]"><li style="color:var(--teal)">Partner machine ★</li><li>Cloud marketplace</li><li>Commercial SEO</li><li>PLG experiment</li></ul></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8] mb-3">P4 · ANZ (gated)</p><ul class="text-[13px] leading-7 space-y-0.5 text-[#8FA0B8]"><li style="color:var(--teal)">Anchor partner ★</li><li>Localisation + analyst</li></ul></div>
+    </div>
+    <p class="reveal mt-4 mono text-[11.5px] tracking-[.04em] text-[#8FA0B8]" style="--d:180ms">★ = the primary pipeline motion for that pillar. Every play has an objective, trigger, numbered steps, assets, cadence, owner, target and kill criterion — a repeatable process, not a one-off campaign.</p>
+  </div>
+
+  <!-- Play P2-1 -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Play P2-1 · the primary P2 motion · the peer roundtable</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">The only format where the actual buyer describes their real problem out loud. Government buyers don't enter funnels; they enter through peers.</p>
+    <div class="grid md:grid-cols-4 gap-4 mb-4">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">T−8wk · Construct the room</p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8]">8–12 seats, never &gt;2 per agency (candour collapses). Reserve 2 for peers who've already deployed.</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">T−6wk · Agenda as a question</p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8]">"What would you show an auditor about your agent estate — and what could you show today?"</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Night · Facilitate, don't pitch</p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8]">No slides. Chatham House rules. Founder attends, briefed not to sell. Target: 80% of talking by attendees.</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">T+2wk · Publish the synthesis</p><p class="text-[12.5px] leading-relaxed text-[#8FA0B8]">"What 12 security leaders told us" — anonymised, genuine. Becomes the next invitation.</p></div>
+    </div>
+    <div class="reveal rounded-xl border border-white/[.08] p-5 text-[13px] text-[#8FA0B8]" style="--d:180ms">Target per session: <span class="text-white/90">10 attendees → 8 engaged → 3 qualified conversations → 1 opportunity.</span> <span style="color:var(--amber)">Kill: &lt;6 attendees or &lt;2 conversations across two sessions.</span></div>
+  </div>
+
+  <!-- Play P3-1 -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Play P3-1 · the primary P3 motion · the supervisory trigger: 48 hours</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">Be first in market with a practitioner read on any MAS or regional publication touching AI. The P3 buying trigger isn't "we might be attacked" — it's "we will be asked, and we cannot yet answer."</p>
+    <div class="card reveal overflow-x-auto mb-4" style="--d:80ms">
+      <table class="tbl w-full min-w-[560px]">
+        <tbody>
+          <tr><td class="num whitespace-nowrap">0h</td><td class="text-white/90 whitespace-nowrap">Publication</td><td>Standing monitoring across MAS releases, circulars, consultations</td></tr>
+          <tr><td class="num whitespace-nowrap">4h</td><td class="text-white/90 whitespace-nowrap">Assess</td><td>What changed? New vs restated? Which controls implicated?</td></tr>
+          <tr><td class="num whitespace-nowrap">24h</td><td class="text-white/90 whitespace-nowrap">Draft</td><td>Fixed template, including what we are NOT claiming</td></tr>
+          <tr><td class="num whitespace-nowrap">48h</td><td class="text-white/90 whitespace-nowrap">Publish + distribute</td><td>Full P3 list personalised, LinkedIn, sales alert, direct notes</td></tr>
+          <tr><td class="num whitespace-nowrap">1wk</td><td class="text-white/90 whitespace-nowrap">Update the asset</td><td>Control-mapping artefact refreshed — the post is the moment, the mapping is the asset</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal mono text-[11.5px] tracking-[.04em] text-[#8FA0B8]" style="--d:120ms">Expect 4–8 qualifying events/year · ≥15 accounts engaged per event · agentic monitoring + first draft, human judgement on final copy.</p>
+    <div class="grid md:grid-cols-4 gap-4 mt-6">
+      <div class="card reveal p-5"><p class="num text-[11px] mb-1.5">01</p><p class="text-sm text-white/90 mb-1">Supervisory signal</p><p class="text-[12px] text-[#8FA0B8]">A rule, circular or consultation changes the question.</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="num text-[11px] mb-1.5">02</p><p class="text-sm text-white/90 mb-1">Control mapping</p><p class="text-[12px] text-[#8FA0B8]">Translate the publication into operational evidence.</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="num text-[11px] mb-1.5">03</p><p class="text-sm text-white/90 mb-1">Ownership wedge</p><p class="text-[12px] text-[#8FA0B8]">Who owns the gap between AI delivery and security approval?</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="num text-[11px] mb-1.5">04</p><p class="text-sm text-white/90 mb-1">Private proof</p><p class="text-[12px] text-[#8FA0B8]">Roundtable + analyst context turns urgency into confidence.</p></div>
+    </div>
+  </div>
+
+  <!-- P1 & P4 -->
+  <div class="mx-auto max-w-6xl px-5 pb-16 grid md:grid-cols-2 gap-5">
+    <div class="card reveal p-7">
+      <p class="kicker mb-4">P1 · Partner enablement — build the machine, let the channel run it</p>
+      <p class="text-[13px] text-[#8FA0B8] mb-4">At ~S$15K per order, a direct motion can't pay for itself. Mid-market scales through other people's distribution.</p>
+      <ul class="text-[13px] leading-relaxed text-[#8FA0B8] space-y-2.5">
+        <li>· Segment by production, not tier badges — top 3 get the investment</li>
+        <li>· Kit v1 by day 60: deck, objection handling, demand playbook</li>
+        <li>· Deal registration with real incentive = the only channel visibility</li>
+        <li>· MDF match-funded, top 3 only, against a defined campaign</li>
+        <li>· Cloud marketplaces — all three live by Q4 2026</li>
+        <li>· Commercial-intent SEO — 10 page-one terms by FY2027</li>
+        <li>· Contained PLG bet — 50 activations/quarter, <span style="color:var(--amber)">hard kill date Q4 2027</span></li>
+      </ul>
+      <p class="mono mt-4 text-[11.5px]" style="color:var(--teal)">Target: 60%+ of P1 pipeline partner-sourced by Q4 2027</p>
+    </div>
+    <div class="card reveal p-7" style="--d:80ms">
+      <p class="kicker mb-4">P4 · ANZ is gated — buy a beachhead before buying attention</p>
+      <div class="space-y-3">
+        <div class="rounded-xl border border-white/[.07] p-4"><p class="mono text-[10.5px] uppercase text-[#8FA0B8]/70 mb-1">Pre-gate</p><p class="text-[12.5px] text-[#8FA0B8]">15–20 anchor partner targets, approached with the partnership case: what can they now sell?</p></div>
+        <div class="rounded-xl border p-4" style="border-color:rgba(45,212,191,.35)"><p class="mono text-[10.5px] uppercase mb-1" style="color:var(--teal)">Gate clears · Q2 FY2027</p><p class="text-[12.5px] text-[#8FA0B8]">1 signed partner + 3 qualified introductions, or 1 design-partner customer → launch ANZ programme.</p></div>
+        <div class="rounded-xl border p-4" style="border-color:rgba(245,184,92,.35)"><p class="mono text-[10.5px] uppercase mb-1" style="color:var(--amber)">Gate misses</p><p class="text-[12.5px] text-[#8FA0B8]">Transfer budget to FSI. Automatic. Pre-committed. No sunk-cost debate.</p></div>
+      </div>
+      <p class="mono mt-4 text-[11.5px] text-[#8FA0B8]">Open question gating the public-sector half: is IRAP on the product roadmap?</p>
+    </div>
+  </div>
+
+  <!-- Content multiplier -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The leverage argument, concrete · one research cycle → 28 assets</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">A solo function cannot produce a quarter of content from scratch. It can produce one instrument and atomise it.</p>
+    <div class="card reveal p-7" style="--d:80ms">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">1 + 1</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Flagship report + summary</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">3</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Sector cuts</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">6</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Social posts</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">3</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Email sends</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">1 + 3</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Webinar + clips</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">4</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">ABM account briefs</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">4</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Earned pitches</p></div>
+        <div class="rounded-xl border border-white/[.07] p-4 text-center"><p class="display text-white text-lg">8</p><p class="mono text-[10px] uppercase text-[#8FA0B8]/70 mt-1">Live, sales, analyst + event</p></div>
+      </div>
+      <p class="mt-5 text-[14px] text-white/85">~112 assets from four research cycles → <span style="color:var(--teal)">~145 total annual output</span> with rapid response + SEO. Achievable only because it descends from 4 cycles, not 145 ideas.</p>
+    </div>
+  </div>
+
+  <!-- 13-week launch -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Q3 2026 · the 13-week launch sequence</p>
+    <p class="body-copy reveal mb-6 text-[15px]" style="--d:40ms">The first quarter builds the machine before scaling it.</p>
+    <div class="card reveal overflow-x-auto mb-4" style="--d:80ms">
+      <table class="tbl w-full min-w-[760px]">
+        <thead><tr><th>W1–2 · Listen</th><th>W3–4 · Decide</th><th>W5–6 · Instrument</th><th>W7–8 · Message</th><th>W9–10 · Enable</th><th>W11–12 · Research</th><th>W13 · Prove</th></tr></thead>
+        <tbody>
+          <tr><td>Model · interviews · capacity</td><td>List · message · kill rules</td><td>CRM · triggers · authority</td><td>Site · datasheet · sequences</td><td>Partners · marketplace · sales</td><td>Index · references · analysts</td><td>Rebuild model on actuals</td></tr>
+          <tr><td class="num">S2 0</td><td class="num">S2 1</td><td class="num">S2 1</td><td class="num">S2 2</td><td class="num">S2 1</td><td class="num">S2 2</td><td class="num">S2 1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="reveal text-[14px] text-white/85" style="--d:120ms">Q3 commitment: <span style="color:var(--teal)">8 genuinely engaged accounts</span> — and a repeatable engine ready for Q4.</p>
+  </div>
+
+  <!-- Weekly rhythm + calendar note -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">The weekly rhythm · a defended calendar, or the urgent wins</p>
+    <div class="grid md:grid-cols-5 gap-4 mb-5">
+      <div class="card reveal p-5"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Mon AM</p><p class="text-sm text-white/90 mb-1.5">Dashboard + triggers</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">3 numbers. What fired, what responds. Tiers. Priorities published.</p></div>
+      <div class="card reveal p-5" style="--d:50ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Tue</p><p class="text-sm text-white/90 mb-1.5">Deep work — protected</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">Content, research, asset building. No meetings. Where the Index gets made.</p></div>
+      <div class="card reveal p-5" style="--d:100ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Wed</p><p class="text-sm text-white/90 mb-1.5">Accounts + triggers</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">AM: Tier-1 personalised outreach (~9). PM: rapid response or next cycle.</p></div>
+      <div class="card reveal p-5" style="--d:150ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Thu</p><p class="text-sm text-white/90 mb-1.5">Partners + sync</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">AM: partner check-ins, MDF, marketplace. PM: sales sync + founder content.</p></div>
+      <div class="card reveal p-5" style="--d:200ms"><p class="mono text-[10.5px] mb-2" style="color:var(--teal)">Fri</p><p class="text-sm text-white/90 mb-1.5">Publish + prep</p><p class="text-[12px] leading-relaxed text-[#8FA0B8]">AM: distribution, social, newsletter, analytics. PM: CRM hygiene, next week.</p></div>
+    </div>
+    <p class="reveal mono text-[11.5px] tracking-[.04em] text-[#8FA0B8]" style="--d:240ms">Standing every month, not shown on the calendar: trigger responses within SLA (1–2/mo), weekly Tier-1 outreach (~9 accounts), monthly Pipeline Council, continuous regulator &amp; analyst engagement. Quarterly capital allocation + kill/double-down, with the CEO.</p>
+  </div>
+
+  <!-- Risks -->
+  <div class="mx-auto max-w-6xl px-5 pb-16">
+    <p class="kicker reveal mb-5">Risks specific to this plan · what breaks it, and the mitigation</p>
+    <div class="card reveal overflow-x-auto mb-4" style="--d:60ms">
+      <table class="tbl w-full min-w-[600px]">
+        <tbody>
+          <tr><td class="text-white/90">Trigger engine fires into a vacuum</td><td>No trigger switched on until its named artefact exists</td></tr>
+          <tr><td class="text-white/90">Roundtable fatigue in a 210-account universe</td><td>Quarterly max per pillar; synthesis must be genuinely valuable</td></tr>
+          <tr><td class="text-white/90">Partner dependence in P1 (60% target = exposure)</td><td>Top-3 concentration monitored; marketplace + SEO as non-partner paths</td></tr>
+          <tr><td class="text-white/90">Reference approval fails in public sector</td><td>Anonymised variants built in parallel from day one — never a scramble</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal rounded-xl border p-5 text-sm leading-relaxed" style="border-color:rgba(245,184,92,.3);color:#E8D5B5;--d:100ms">
+      <span class="pill pill-amber mr-2">Open question</span> Sales capacity: the plan generates ~96 SQOs. If fewer than 3 sellers, the split shifts to fewer, larger P2 deals.
+    </div>
+  </div>
+
+  <!-- Closing -->
+  <div class="mx-auto max-w-6xl px-5 pb-24">
+    <div class="card card-2 reveal p-8 md:p-10">
+      <p class="kicker mb-4">The engine in one line</p>
+      <p class="display text-white text-2xl md:text-3xl leading-tight max-w-2xl">280 accounts. Nine a month. Every play moves one.</p>
+      <ul class="mt-6 text-[13.5px] leading-relaxed text-[#8FA0B8] space-y-2">
+        <li>· Six stages with hard entry tests — S2 engagement is the north star</li>
+        <li>· An eight-trigger engine that converts timing into pipeline</li>
+        <li>· Thirteen repeatable plays, one primary motion per pillar</li>
+        <li>· One research cycle atomised into ~145 assets a year</li>
+        <li>· Coverage ratio as the early-warning system, a year ahead of revenue</li>
+      </ul>
+      <p class="mt-6 text-[14px] text-white/85">You cannot govern what you cannot trace. <span style="color:var(--teal)">The demand engine is how the market learns that.</span></p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     TAB 03 · MARKETING LOOP
+     ================================================================ -->
+<section id="loop" class="tabpane" role="tabpanel">
+  <div class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <p class="kicker mb-4">Tab 03 · The marketing closed loop</p>
+      <h1 class="display text-white text-3xl md:text-4xl leading-tight max-w-3xl">Measure honestly at small n. Decide before the data begs.</h1>
+      <p class="body-copy mt-5 leading-relaxed">
+        At 23 deals, multi-touch attribution is statistical noise wearing a dashboard. The loop below trades false precision
+        for honest signal: one required attribution question, an account-level engagement score, a coverage ratio that warns
+        a year early, and <span class="text-white/90">kill and double-down rules signed before campaigns launch</span> — so every
+        verdict is a reading of evidence, not a negotiation with sunk cost.
+      </p>
+
+      <!-- Measurement stack -->
+      <div class="card reveal mt-12 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-6">3a · The measurement stack — three instruments, no attribution theatre</h2>
+        <div class="grid md:grid-cols-3 gap-5">
+          <div class="rounded-xl border border-white/[.07] p-6" style="background:rgba(45,212,191,.03)">
+            <p class="pill pill-teal mb-4">Self-reported attribution</p>
+            <p class="text-[13.5px] text-[#B9C6D8] leading-relaxed">A single required field at every hand-raise: "what prompted you to talk to us?" Free text, read by a human. Unreasonably effective in long trust cycles — and the only attribution that survives small n.</p>
+          </div>
+          <div class="rounded-xl border border-white/[.07] p-6" style="background:rgba(45,212,191,.03)">
+            <p class="pill pill-teal mb-4">Account engagement score</p>
+            <p class="text-[13.5px] text-[#B9C6D8] leading-relaxed">Scored per account across the 5–9 person buying group, not per lead — depth (who) × recency × deliberateness (what they did). This is what moves an account to S2 and keeps stage calls honest.</p>
+          </div>
+          <div class="rounded-xl border border-white/[.07] p-6" style="background:rgba(45,212,191,.03)">
+            <p class="pill pill-teal mb-4">Coverage ratio — the early warning</p>
+            <p class="text-[13.5px] text-[#B9C6D8] leading-relaxed">Open qualified pipeline ÷ remaining pillar target. Watched per pillar, monthly. Coverage degrades a year before revenue does — it is the instrument that says which pillar misses FY2028 while there is still time to act.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cadence -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-6">3b · Cadence — who reads what, when, and who decides</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Weekly · 15 min · solo</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Trigger scan, engagement moves, plays in flight. Agentic workflows compile; the human scans for anomalies.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Monthly · Pipeline Council · 60 min</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Marketing + CCO + sales. Stage movement by pillar, coverage ratio, play performance, handoff friction. Decisions inside pillars are made here.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Quarterly · half-day · CCO + CEO</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Kill / double-down verdicts against the pre-committed rules; budget re-vote across pillars; the FY2028 split treated as a standing hypothesis to falsify.</p></div>
+        </div>
+        <p class="mt-5 text-[13px] text-[#8FA0B8]">Automation compiles and flags; it never kills a channel, moves budget or re-messages a persona on its own. That judgement is the job.</p>
+      </div>
+
+      <!-- Rules -->
+      <div class="mt-6 grid lg:grid-cols-2 gap-5">
+        <div class="card reveal p-7">
+          <h2 class="mono text-[12px] tracking-[.14em] uppercase mb-6" style="color:var(--amber)">3c · Pre-committed kill rules</h2>
+          <ul class="space-y-4 text-[13.5px] leading-relaxed text-[#B9C6D8]">
+            <li><span class="text-white/90 font-medium">Zero engaged accounts, two quarters</span> → the play is killed. There is no third quarter.</li>
+            <li><span class="text-white/90 font-medium">Cost per engaged account &gt;3× blended, two quarters</span> → killed or rebuilt from scratch — not "optimised".</li>
+            <li><span class="text-white/90 font-medium">P4 anchor-partner gate missed (end Q2 FY2027)</span> → ANZ budget frozen and transferred to P3.</li>
+            <li><span class="text-white/90 font-medium">Developer PLG &lt;50 activations/quarter, two quarters</span> → the experiment ends.</li>
+          </ul>
+          <div class="mt-5 rounded-lg border border-white/[.07] p-4">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-2">Exempt from kill rules</p>
+            <p class="text-[12.5px] text-[#B9C6D8]">Regulator proximity and reference manufacturing — trust infrastructure on multi-year clocks, reviewed annually instead.</p>
+          </div>
+        </div>
+        <div class="card card-2 reveal p-7" style="--d:100ms">
+          <h2 class="mono text-[12px] tracking-[.14em] uppercase mb-6" style="color:var(--teal)">3d · Pre-committed double-down rules</h2>
+          <ul class="space-y-4 text-[13.5px] leading-relaxed text-[#B9C6D8]">
+            <li><span class="text-white/90 font-medium">Cost per engaged account under half blended, two quarters</span> → budget +50% the following quarter.</li>
+            <li><span class="text-white/90 font-medium">A research asset drives &gt;15% of a quarter's engaged accounts</span> → it becomes a series.</li>
+            <li><span class="text-white/90 font-medium">A named reference lands</span> → the reference programme is funded immediately; nothing converts regulated buyers faster.</li>
+            <li><span class="text-white/90 font-medium">A pillar runs &gt;20% over coverage, two quarters</span> → budget reallocates to it from the weakest pillar.</li>
+          </ul>
+          <p class="mt-5 text-[13px] text-[#8FA0B8]">Symmetry matters: pre-committing the upside rules stops winners being starved by inertia just as the kill rules stop losers being fed by hope.</p>
+        </div>
+      </div>
+
+      <!-- Budget -->
+      <div class="card reveal mt-6 p-7">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-6">
+          <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8]">3e · FY2027 programme budget — S$540K ex-headcount, itemised</h2>
+          <span class="mono text-[10.5px] text-[#8FA0B8]/60">Labelled planning assumption</span>
+        </div>
+        <div class="grid md:grid-cols-2 gap-x-10 gap-y-3.5">
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Research &amp; the Index</span><span class="num">S$65K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:100%"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Roundtables &amp; executive events</span><span class="num">S$70K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:100%;--bd:.05s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Contractors (design, writing)</span><span class="num">S$60K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:92%;--bd:.1s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Analyst relations</span><span class="num">S$50K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:77%;--bd:.15s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">PR &amp; rapid response</span><span class="num">S$50K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:77%;--bd:.2s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Paid (retargeting + air cover only)</span><span class="num">S$50K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:77%;--bd:.25s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Speaking &amp; conferences</span><span class="num">S$45K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:69%;--bd:.3s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Martech &amp; data</span><span class="num">S$45K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:69%;--bd:.35s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Partner MDF</span><span class="num">S$40K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:62%;--bd:.4s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Web &amp; SEO</span><span class="num">S$35K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:54%;--bd:.45s"></div></div></div>
+          <div><div class="flex justify-between text-[12.5px] mb-1"><span class="text-white/85">Contingency (trigger-reactive)</span><span class="num">S$30K</span></div><div class="h-2 rounded bg-white/[.06]"><div class="bar" style="width:46%;--bd:.5s;background:var(--amber)"></div></div></div>
+        </div>
+        <div class="mt-6 rounded-xl border border-white/[.07] p-5" style="background:rgba(245,184,92,.04)">
+          <p class="mono text-[11px] tracking-[.14em] uppercase mb-2" style="color:var(--amber)">If the envelope is halved</p>
+          <p class="text-[13.5px] text-[#B9C6D8] leading-relaxed">Cut in this order: PR retainer, 80% of paid, event booths, contractor breadth, martech. Protect to the last dollar: research &amp; the Index, analyst relations, roundtables. The protected three are the trust engine — everything else is amplification.</p>
+        </div>
+      </div>
+
+      <!-- First 90 days -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-6">3f · The first 90 days — listen, decide, ship, prove</h2>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Days 1–14 · Listen</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Validate the base-ARR assumption; pipeline autopsy on every live and lost deal; ten customer and partner conversations; confirm ANZ and IRAP posture.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Days 15–30 · Decide</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Account list v1 named and owned; message locked; Phase-1 success criteria in writing; kill and double-down rules signed with the CCO.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Days 31–60 · Ship</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">Site rebuilt on the accountability gap; reference programme and partner kit v1 live; rapid-response bench operational; first analyst briefings; Index survey drafted.</p></div>
+          <div class="rounded-xl border border-white/[.07] p-5"><p class="mono text-[10.5px] uppercase tracking-[.1em] mb-2" style="color:var(--teal)">Days 61–90 · Prove</p><p class="text-[13px] text-[#B9C6D8] leading-relaxed">First P2 roundtable run; Index survey fielded; first Pipeline Council on real numbers; 90-day review — with the first kill-or-double calls already made.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     TAB 04 · TRACECTRL PRODUCT MARKETING
+     ================================================================ -->
+<section id="kit" class="tabpane" role="tabpanel">
+  <div class="py-16 md:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+
+      <!-- Hero -->
+      <p class="kicker mb-4">Tab 04 · TraceCtrl product-marketing kit · Trace / Control / Grow</p>
+      <h1 class="display text-white text-3xl md:text-4xl leading-tight max-w-3xl">Win the right to control the agents that matter.</h1>
+      <p class="body-copy mt-5 leading-relaxed max-w-3xl">
+        A fourteen-part product-marketing kit for CloudsineAI TraceCtrl — the sovereign AI-agent security platform for regulated
+        Asia-Pacific. The category wedge is not “more AI security.” It is <span class="text-white/90">provable control for regulated APAC</span>.
+        Every component answers a buying question and hands the next team something usable.
+      </p>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="card reveal p-4"><p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">01 · See</p><p class="text-[12.5px] text-[#B9C6D8] mt-1">Discover the agent estate</p></div>
+        <div class="card reveal p-4" style="--d:60ms"><p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">02 · Prove</p><p class="text-[12.5px] text-[#B9C6D8] mt-1">Validate exploitable risk</p></div>
+        <div class="card reveal p-4" style="--d:120ms"><p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">03 · Control</p><p class="text-[12.5px] text-[#B9C6D8] mt-1">Protect runtime</p></div>
+        <div class="card reveal p-4" style="--d:180ms"><p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">04 · Grow</p><p class="text-[12.5px] text-[#B9C6D8] mt-1">Turn trust into ARR</p></div>
+      </div>
+
+      <!-- Artefacts -->
+      <div class="mt-10 grid md:grid-cols-3 gap-5">
+        <a href="artefact-1-tracectrl-landing-page.html" class="card hoverable reveal p-6 block group md:col-span-1" style="border-color:rgba(45,212,191,.4);background:rgba(45,212,191,.05)">
+          <p class="mono text-[10.5px] tracking-[.12em] uppercase mb-3" style="color:var(--teal)">Artefact 01 · Conversion · ★ open this first</p>
+          <h2 class="display text-white text-lg mb-2">TraceCtrl landing page</h2>
+          <p class="text-[13px] text-[#8FA0B8] leading-relaxed mb-4">The demand engine's destination asset — animated attack-graph hero, full platform walkthrough (Discover → Govern), pricing ladder and sovereign deployment story, aligned to the live product docs.</p>
+          <span class="mono text-[11px]" style="color:var(--teal)">Open the landing page →</span>
+        </a>
+        <a href="artefact-2-battlecard.html" class="card hoverable reveal p-6 block group" style="--d:80ms">
+          <p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-3">Artefact 02 · Sales enablement</p>
+          <h2 class="display text-white text-lg mb-2">Competitive battlecard</h2>
+          <p class="text-[13px] text-[#8FA0B8] leading-relaxed mb-4">Arms the direct motion against the consolidating US/EU field — honest about where we lose, precise about where we structurally win.</p>
+          <span class="mono text-[11px]" style="color:var(--teal)">Open artefact →</span>
+        </a>
+        <a href="artefact-3-ciso-onepager.html" class="card hoverable reveal p-6 block group" style="--d:160ms">
+          <p class="mono text-[10.5px] tracking-[.12em] uppercase text-[#8FA0B8]/70 mb-3">Artefact 03 · Committee traveller</p>
+          <h2 class="display text-white text-lg mb-2">CISO one-pager</h2>
+          <p class="text-[13px] text-[#8FA0B8] leading-relaxed mb-4">Print-ready and evidence-led — built to travel inside the buying committee where marketing cannot go.</p>
+          <span class="mono text-[11px]" style="color:var(--teal)">Open artefact →</span>
+        </a>
+      </div>
+
+      <!-- Executive thesis -->
+      <div class="card-2 glow reveal mt-6 p-7 md:p-8">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-5">Executive thesis</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div><p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">North-star ARR</p><p class="num text-white text-2xl">S$5.0M</p><p class="text-[11.5px] text-[#8FA0B8]">FY2028 ambition</p></div>
+          <div><p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">Primary growth engine</p><p class="num text-white text-2xl">TraceCtrl</p><p class="text-[11.5px] text-[#8FA0B8]">S$80K–150K ARR/order</p></div>
+          <div><p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">Trust wedge</p><p class="num text-2xl" style="color:var(--teal)">Sovereignty</p><p class="text-[11.5px] text-[#8FA0B8]">Residency + procurement</p></div>
+          <div><p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">Commercial system</p><p class="num text-white text-2xl">Proof → Pipeline</p><p class="text-[11.5px] text-[#8FA0B8]">Evidence-led category creation</p></div>
+        </div>
+        <p class="display text-white text-lg md:text-xl leading-snug">TraceCtrl should own the moment when an AI-agent programme moves from experimentation to accountable production.</p>
+        <p class="text-[13.5px] text-[#B9C6D8] mt-3 leading-relaxed">Make invisible agent risk observable. Turn observability into regulator-grade proof. Convert that proof into high-value enterprise demand.</p>
+      </div>
+
+      <!-- Kit map -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">Kit map — fourteen assets, one commercial narrative</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Every component answers a buying question and hands the next team something usable.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill pill-teal">01 Product overview</span><span class="pill pill-teal">02 Market context</span><span class="pill pill-teal">03 ICP + personas</span><span class="pill pill-teal">04 Positioning</span><span class="pill pill-teal">05 Messaging</span><span class="pill pill-teal">06 Value matrix</span><span class="pill pill-teal">07 Battlecards</span><span class="pill pill-teal">08 Sales enablement</span><span class="pill pill-teal">09 Demand generation</span><span class="pill pill-teal">10 Content kit</span><span class="pill pill-teal">11 GTM plan</span><span class="pill pill-teal">12 Proof system</span><span class="pill pill-teal">13 Metrics dashboard</span><span class="pill pill-teal">14 Asset library</span>
+        </div>
+      </div>
+
+      <!-- 01 Product overview -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">01 · Product overview — one platform, one engine, one continuous control loop</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">TraceCtrl connects developer telemetry to security decisions and regulator-ready evidence.</p>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-5">
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">01 DISCOVER</p><p class="text-[12px] text-[#B9C6D8] mt-1">Inventory + topology</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">02 ASSESS</p><p class="text-[12px] text-[#B9C6D8] mt-1">Risk scoring + Intel</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">03 TEST</p><p class="text-[12px] text-[#B9C6D8] mt-1">Strike / Red-Team Eval</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">04 PROTECT</p><p class="text-[12px] text-[#B9C6D8] mt-1">Guard + policy</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">05 GOVERN</p><p class="text-[12px] text-[#B9C6D8] mt-1">Fix + evidence</p></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-lg border border-white/[.07] p-4">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-2">Engine layer</p>
+            <p class="text-[12.5px] text-[#B9C6D8] leading-relaxed"><span class="text-white/90">TAGAAI in the brief / ASIE on the live site.</span> Attack-graph intelligence maps permissions, identities, tools and data flows; then validates exploitable paths with evidence.</p>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-4" style="background:rgba(245,184,92,.04);border-color:rgba(245,184,92,.3)">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em] mb-2" style="color:var(--amber)">Decision required</p>
+            <p class="text-[12.5px] leading-relaxed" style="color:#E8D5B5">Unify the engine name before launch. Keep one customer-facing taxonomy.</p>
+          </div>
+        </div>
+        <div class="mt-5">
+          <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Land with visibility. Expand into control. — the live pricing ladder creates a clean product-led entry into enterprise security</p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="rounded-lg border border-white/[.07] p-5">
+              <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70">Developer</p>
+              <p class="num text-white text-xl mt-1">Free</p>
+              <p class="text-[12px] text-[#8FA0B8] mt-2 leading-relaxed">Up to 3 agents · 7-day history · OTEL-native telemetry · community support</p>
+              <p class="mono text-[10.5px] mt-3" style="color:var(--teal)">ACQUIRE</p>
+            </div>
+            <div class="rounded-lg border p-5" style="border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.05)">
+              <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70">Pro</p>
+              <p class="num text-white text-xl mt-1">Coming soon</p>
+              <p class="text-[12px] text-[#8FA0B8] mt-2 leading-relaxed">Unlimited agents · 90-day history · attack-graph analysis · Guard + compliance</p>
+              <p class="mono text-[10.5px] mt-3" style="color:var(--teal)">ACTIVATE</p>
+            </div>
+            <div class="rounded-lg border border-white/[.07] p-5">
+              <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70">Enterprise</p>
+              <p class="num text-white text-xl mt-1">Custom</p>
+              <p class="text-[12px] text-[#8FA0B8] mt-2 leading-relaxed">Risk + Strike + Guard · multi-cloud / frameworks · SSO, RBAC, SIEM/SOAR/GRC · air-gapped deployment</p>
+              <p class="mono text-[10.5px] mt-3" style="color:var(--teal)">MONETISE</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Market context -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">02 · Market context — the control gap is the category opportunity</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Agent adoption is accelerating faster than control systems can catch up. Three forces converge.</p>
+        <div class="grid md:grid-cols-3 gap-4 mb-5">
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">Technology · Agents can act</p>
+            <p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">LLM security is no longer only about model output. Agents invoke tools, move data, call other agents and make decisions across systems.</p>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">Assurance · Boards must prove control</p>
+            <p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">CISOs need a defensible answer to: what did every agent do? What could it reach? Which paths were actually exploitable?</p>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[10.5px] uppercase tracking-[.12em]" style="color:var(--teal)">Market access · APAC needs a sovereign option</p>
+            <p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">Residency, procurement rails and regulator mapping can determine whether an otherwise capable platform has the right to sell.</p>
+          </div>
+        </div>
+        <p class="mono text-[12px] mb-6" style="color:var(--teal)">Category to own: security observability and control for agentic AI.</p>
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Concentrate the bet: regulated buyers first — illustrative ARR model as a resource-allocation decision</p>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-[12.5px]">
+            <thead><tr><th>Pillar</th><th>Segment</th><th>Product</th><th>ARR</th><th>Mktg %</th><th>Commercial logic</th></tr></thead>
+            <tbody>
+              <tr><td class="mono" style="color:var(--teal)">P1</td><td>ASEAN mid-market</td><td>WO + TC</td><td class="num">S$1.0M</td><td class="num">20%</td><td>Channel volume + trust bridge</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P2</td><td>SG public sector</td><td>TraceCtrl</td><td class="num">S$1.4M</td><td class="num">30%</td><td>Sovereignty + reference flywheel</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P3</td><td>SG/ASEAN banking</td><td>TraceCtrl</td><td class="num">S$1.8M</td><td class="num">35%</td><td>Highest-value direct wedge</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P4</td><td>ANZ gov + banking</td><td>TraceCtrl</td><td class="num">S$0.8M</td><td class="num">15%</td><td>Partner-led market entry</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[12px] mt-4 leading-relaxed rounded-lg border p-3" style="border-color:rgba(245,184,92,.3);color:#E8D5B5">Assumption: ARR split and marketing allocation are proposed planning assumptions. Prioritise P3 + P2 until evidence says otherwise. (Tab 01's revenue modelling refines this split against the S$1.8M existing base.)</p>
+      </div>
+
+      <!-- 03 ICP + personas -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">03 · ICP + personas — sell control to security, sell velocity to AI leadership, give both the same proof</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">The highest-fit account has urgency, exposure and permission to buy. Use a visible score to focus ABM, partner nominations and SDR research.</p>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-3">
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">REGULATED · 25 pts</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Banking, government, critical infrastructure</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">AGENTIC · 25 pts</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Multiple agents moving toward production</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">EXPOSED · 20 pts</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Sensitive tools, data or privileged identities</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">SOVEREIGN · 15 pts</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Residency, procurement or air-gap needs</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">SPONSORED · 15 pts</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Named CISO and AI leader</p></div>
+        </div>
+        <p class="mono text-[11.5px] mb-6" style="color:var(--teal)">Tier 1 ≥ 80 · Tier 2 = 60–79 · Nurture &lt; 60</p>
+
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Two buyers, one shared enemy: unprovable agent risk. Generate on the CTO side; convert on the CISO side.</p>
+        <div class="grid md:grid-cols-2 gap-4 mb-5">
+          <div class="card-2 p-6">
+            <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">PROVE IT — CISO / VP Security</p>
+            <div class="space-y-2.5 text-[12.5px] text-[#B9C6D8] leading-relaxed">
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">Role in deal</span><br>Approver, risk owner and credibility judge.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">Private stake</span><br>Being asked on the record and having no defensible answer.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">First value moment</span><br>Seeing unregistered agents in their own estate.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">CTA</span><br><span class="text-white/90">“Map my agent attack surface.”</span></p>
+            </div>
+          </div>
+          <div class="card-2 p-6">
+            <p class="mono text-[11px] tracking-[.14em] uppercase mb-3" style="color:var(--teal)">SHIP IT — CTO / Head of AI</p>
+            <div class="space-y-2.5 text-[12.5px] text-[#B9C6D8] leading-relaxed">
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">Role in deal</span><br>Initiator, technical champion and adoption engine.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">Private stake</span><br>One incident triggering a programme-wide freeze.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">First value moment</span><br>Replacing per-release gates with standing visibility.</p>
+              <p><span class="mono text-[10.5px] uppercase text-[#8FA0B8]/70">CTA</span><br><span class="text-white/90">“Instrument my first agents.”</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em] text-white/90 mb-3">Deep card — the regulated CISO is buying a defensible answer</p>
+            <div class="space-y-2 text-[12px] text-[#8FA0B8] leading-relaxed">
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">EMOTIONAL JOB</span> — An auditor, board member or regulator asks what an agent accessed, and the answer requires days of reconstruction.</p>
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">FRICTION</span> — Vendor hype, theoretical scores, unclear ownership between cyber and model risk, offshore evidence flows.</p>
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">TRUST</span> — A peer reference, a dated artefact, their own topology, validated attack paths, procurement-ready deployment.</p>
+            </div>
+            <div class="mt-3 rounded-lg border border-white/[.07] p-3 text-[12px] leading-relaxed">
+              <p class="mono text-[10px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">Message ladder</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">OPEN</span> “Can you name every agent in production, and what it accessed last Tuesday?”</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">PROVE</span> Validated attack paths + evidence, not another theoretical risk score.</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">CLOSE</span> The evidence and deployment stay inside the required jurisdiction.</p>
+            </div>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em] text-white/90 mb-3">Deep card — the Head of AI is buying permission to keep shipping</p>
+            <div class="space-y-2 text-[12px] text-[#8FA0B8] leading-relaxed">
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">EMOTIONAL JOB</span> — A promising roadmap stalls because each new agent reopens the same security debate, or one incident freezes the whole programme.</p>
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">FRICTION</span> — Heavy integration, proprietary telemetry, security theatre, tools developers will route around.</p>
+              <p><span style="color:var(--teal)" class="mono text-[10.5px]">TRUST</span> — Three-line instrumentation, OTEL portability, framework support, open research, useful self-serve technical content.</p>
+            </div>
+            <div class="mt-3 rounded-lg border border-white/[.07] p-3 text-[12px] leading-relaxed">
+              <p class="mono text-[10px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-1">Message ladder</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">OPEN</span> “How many releases is your security review queue holding right now?”</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">PROVE</span> Instrument quickly; give security continuous visibility instead of one-off review packs.</p>
+              <p class="text-[#B9C6D8]"><span class="mono text-[10.5px]" style="color:var(--teal)">CLOSE</span> Protect roadmap velocity by making every agent action traceable and controllable.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Enterprise GTM must orchestrate the whole buying committee</p>
+        <div class="overflow-x-auto mb-6">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>Member</th><th>Role</th><th>Cares about</th><th>Best route in</th></tr></thead>
+            <tbody>
+              <tr><td class="text-white/90">Head of AI / CTO</td><td>Initiator + champion</td><td>Velocity, adoption, low friction</td><td>Developer research → self-serve trial</td></tr>
+              <tr><td class="text-white/90">CISO / VP Security</td><td>Approver + risk owner</td><td>Evidence, blast radius, attestation</td><td>Peer roundtable → mapping workshop</td></tr>
+              <tr><td class="text-white/90">AppSec / AI engineer</td><td>Evaluator + operator</td><td>Integration, signal quality, workflow fit</td><td>Docs, GitHub, technical demo</td></tr>
+              <tr><td class="text-white/90">Risk / compliance</td><td>Validator</td><td>Policy mapping, audit trail, ownership</td><td>Solution brief + evidence walkthrough</td></tr>
+              <tr><td class="text-white/90">Procurement / data</td><td>Gatekeeper</td><td>Residency, SLA, deployment, vendor risk</td><td>Datasheet + on-prem/appliance pack</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">The persona insight changes the GTM sequence — lead each stage with the question the buyer is already trying to answer</p>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>Stage</th><th>CTO / Head of AI</th><th>CISO / Security</th><th>Best asset / offer</th><th>Exit criterion</th></tr></thead>
+            <tbody>
+              <tr><td class="text-white/90">Unaware → Problem</td><td>Why is security slowing us?</td><td>Is agent risk materially different?</td><td>Open research + Attack Path of the Month</td><td>Buyer names the accountability gap</td></tr>
+              <tr><td class="text-white/90">Problem → Category</td><td>Can visibility replace the queue?</td><td>Can this produce defensible evidence?</td><td>Agent Blindspot Audit + AI-BOM</td><td>Agrees AgentSecOps is required</td></tr>
+              <tr><td class="text-white/90">Category → Vendor</td><td>Will engineers adopt it?</td><td>Does it prove exploitability?</td><td>Technical trial + own-topology mapping</td><td>Both sponsors enter evaluation</td></tr>
+              <tr><td class="text-white/90">Vendor → Decision</td><td>Will this protect velocity?</td><td>Will it survive audit and procurement?</td><td>ROI case + evidence walkthrough + sovereign pack</td><td>Champion, approver and paper process aligned</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mono text-[12px] mt-4" style="color:var(--teal)">Commercial rule: acquire with technical usefulness → elevate with attack-path proof → close with sovereignty and procurement readiness.</p>
+      </div>
+
+      <!-- 04 Positioning -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">04 · Positioning — built to survive procurement</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Own the accountable-production moment, not the crowded generic AI-security label. Category parity gets shortlisted; sovereignty and proof win the deal.</p>
+        <div class="rounded-xl border border-white/[.07] p-6 mb-5">
+          <p class="text-[15px] leading-relaxed text-[#CBD5E4]"><span class="mono text-[11px] mr-2" style="color:var(--teal)">FOR</span> regulated Asia-Pacific organisations deploying autonomous AI agents, <span class="mono text-[11px] mx-2" style="color:var(--teal)">TRACECTRL IS</span> the sovereign AI-agent security platform <span class="mono text-[11px] mx-2" style="color:var(--teal)">THAT</span> discovers, proves and controls agent risk across the full lifecycle.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-[12.5px] mb-5">
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8]/70 mb-1">Category</p><p class="text-white/90">AI-agent security &amp; governance</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8]/70 mb-1">Wedge</p><p class="text-white/90">Sovereign, regulated APAC</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8]/70 mb-1">Mechanism</p><p class="text-white/90">Standards-grounded attack graph</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px] uppercase tracking-[.1em] text-[#8FA0B8]/70 mb-1">Outcome</p><p class="text-white/90">Auditable control without slowing AI</p></div>
+        </div>
+        <div class="rounded-lg border border-white/[.07] p-5">
+          <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Simplify three markets into one operating system — meet buyers in familiar categories, then expand the frame</p>
+          <div class="grid md:grid-cols-3 gap-3 mb-3">
+            <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[11px]" style="color:var(--teal)">AI-SPM → SEE</p><p class="text-[12px] text-[#8FA0B8] mt-1">Inventory + topology · Risk Eval</p></div>
+            <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[11px]" style="color:var(--teal)">AI red teaming → PROVE</p><p class="text-[12px] text-[#8FA0B8] mt-1">Strike / Red-Team Eval · exploit evidence</p></div>
+            <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[11px]" style="color:var(--teal)">AI-DR → CONTROL</p><p class="text-[12px] text-[#8FA0B8] mt-1">Guard · runtime policy</p></div>
+          </div>
+          <p class="mono text-[12px]" style="color:var(--teal)">TraceCtrl = Discover → Assess → Test → Protect → Govern</p>
+        </div>
+      </div>
+
+      <!-- 05 Messaging -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">05 · Messaging — Trace Your Agents. Control Your Risks.</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">One platform narrative — <span class="text-white/90">the sovereign control plane for agentic AI</span> — with persona-specific entry doors. Lead with the risk the buyer can name; prove it with the evidence they can defend.</p>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Ship with visibility</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">CTO opener: replace repeated review gates with continuous agent telemetry and topology.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Prove what happened</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">CISO conversion: validated attack paths and evidence that survive scrutiny.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Control without a freeze</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">Shared outcome: runtime guardrails protect the estate and the AI roadmap.</p></div>
+        </div>
+        <p class="mono text-[12px]" style="color:var(--teal)">Sequence: technical usefulness opens → own-estate proof converts → sovereignty closes. Never reverse the order.</p>
+      </div>
+
+      <!-- 06 Value matrix -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">06 · Value-proposition matrix — translate capabilities into buyer value</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">The same platform earns different budgets with different outcomes.</p>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>Capability</th><th>Security value</th><th>AI / engineering value</th><th>Executive value</th><th>Evidence</th></tr></thead>
+            <tbody>
+              <tr><td class="text-white/90">Inventory + topology</td><td>Find shadow agents</td><td>Understand dependencies</td><td>Know the estate</td><td class="mono text-[11px]" style="color:var(--teal)">Live AI-BOM / graph</td></tr>
+              <tr><td class="text-white/90">Risk / attack graph</td><td>Prioritise paths</td><td>Fix toxic combinations</td><td>Fund material risk</td><td class="mono text-[11px]" style="color:var(--teal)">Explainable score</td></tr>
+              <tr><td class="text-white/90">Strike / red team</td><td>Validate exploitability</td><td>Test before release</td><td>Prove assurance</td><td class="mono text-[11px]" style="color:var(--teal)">Attack-path evidence</td></tr>
+              <tr><td class="text-white/90">Guard</td><td>Block runtime abuse</td><td>Ship with guardrails</td><td>Reduce incident exposure</td><td class="mono text-[11px]" style="color:var(--teal)">Policy + trace</td></tr>
+              <tr><td class="text-white/90">Compliance exports</td><td>Accelerate audit</td><td>Reuse evidence</td><td>Defend decisions</td><td class="mono text-[11px]" style="color:var(--teal)">PDPA / NIST / SOC 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 07 Battlecards -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">07 · Competitive battlecards — parity × permission × proof</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Do not claim the attack graph is unique. Win on provable rigour and right-to-sell. Use this as a discovery guide, not a feature-checkbox contest. <a href="artefact-2-battlecard.html" class="mono text-[11.5px]" style="color:var(--teal)">Full battlecard artefact →</a></p>
+        <div class="overflow-x-auto mb-6">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>Alternative</th><th>Why they win</th><th>Where to press</th><th>TraceCtrl response</th><th>Discovery question</th></tr></thead>
+            <tbody>
+              <tr><td class="text-white/90">US/EU AI-security platform</td><td>Brand + breadth</td><td>Residency / procurement</td><td>Sovereign form factors + APAC rails</td><td class="text-[#B9C6D8]">Where can agent data legally flow?</td></tr>
+              <tr><td class="text-white/90">Observability platform</td><td>Developer adoption</td><td>Security depth</td><td>OTEL-native plus attack-path validation</td><td class="text-[#B9C6D8]">Can it prove exploitability?</td></tr>
+              <tr><td class="text-white/90">Point red-team tool</td><td>Fast testing</td><td>No continuous control</td><td>Test connected to runtime Guard</td><td class="text-[#B9C6D8]">What happens after the test?</td></tr>
+              <tr><td class="text-white/90">Build internally</td><td>Control + familiarity</td><td>Maintenance + assurance</td><td>Deployable engine + evidence model</td><td class="text-[#B9C6D8]">Who owns ongoing threat logic?</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Turn objections into diagnostic conversations — answer briefly, then ask the question that reveals the buying condition</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="text-white/90 text-[13px] mb-2">“We already have observability.”</p><p class="text-[12px] text-[#8FA0B8] leading-relaxed">Good. TraceCtrl is OTEL-native. The gap is turning telemetry into agent-specific attack paths, risk and runtime policy.</p><p class="mono text-[11.5px] mt-2" style="color:var(--teal)">→ Can your current stack show blast radius and prove exploitability?</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="text-white/90 text-[13px] mb-2">“Our agents are still pilots.”</p><p class="text-[12px] text-[#8FA0B8] leading-relaxed">That is the cheapest point to establish inventory, tracing and release controls.</p><p class="mono text-[11.5px] mt-2" style="color:var(--teal)">→ Which pilot will touch production data first?</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="text-white/90 text-[13px] mb-2">“We can build this.”</p><p class="text-[12px] text-[#8FA0B8] leading-relaxed">You can build instrumentation. The recurring cost is attack logic, validation, policy maintenance and audit evidence.</p><p class="mono text-[11.5px] mt-2" style="color:var(--teal)">→ Who owns that control plane in year two?</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="text-white/90 text-[13px] mb-2">“We cannot send data offshore.”</p><p class="text-[12px] text-[#8FA0B8] leading-relaxed">Enterprise supports on-prem and air-gapped deployment for regulated buyers.</p><p class="mono text-[11.5px] mt-2" style="color:var(--teal)">→ What residency and procurement constraints are non-negotiable?</p></div>
+        </div>
+      </div>
+
+      <!-- 08 Sales enablement -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">08 · Sales enablement — make the first meeting diagnostic and the second meeting evidentiary</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">A sales motion built around the buyer's own attack surface. The demo should reveal a risk, validate it and end with a decision path.</p>
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-6">
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">01 QUALIFY</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Score regulation, agent maturity, exposure and sovereignty.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">02 MAP</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Instrument or model a representative agent workflow.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">03 REVEAL</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Show topology, excessive agency and toxic combinations.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">04 VALIDATE</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Run a controlled red-team path and capture evidence.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">05 CONTROL</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Apply Guard/policy and show the changed trace.</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="mono text-[10.5px]" style="color:var(--teal)">06 COMMIT</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Agree pilot scope, success criteria and procurement route.</p></div>
+        </div>
+        <div class="card-2 p-6">
+          <p class="mono text-[10.5px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-2">Conversion asset — built as Artefact 01</p>
+          <p class="display text-white text-lg leading-snug mb-2">Sovereign AgentSecOps · See every agent. Prove every risk. Control every action.</p>
+          <p class="text-[12.5px] text-[#B9C6D8] leading-relaxed mb-3">TraceCtrl maps your agent topology, validates exploitable attack paths and enforces runtime protection, with deployment options built for regulated Asia-Pacific. Used for ABM, events, partner campaigns and the Enterprise CTA — <span class="mono text-[11px]" style="color:var(--teal)">MAP MY ATTACK SURFACE</span>.</p>
+          <a href="artefact-1-tracectrl-landing-page.html" class="mono text-[11.5px]" style="color:var(--teal)">Open the live landing page →</a>
+        </div>
+      </div>
+
+      <!-- 09 Demand generation -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">09 · Demand generation — one operating system, four persona-led plays</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">The entry persona changes by pillar; every enterprise motion must eventually dual-thread. Full play-by-play detail lives in <button class="mono text-[12px] underline underline-offset-4" style="color:var(--teal)" data-tab-link="leadgen">Tab 02 · Lead Gen</button>.</p>
+        <div class="overflow-x-auto mb-4">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>P</th><th>Entry persona</th><th>Pain-led offer</th><th>Primary channels</th><th>Conversion thread</th><th>Success signal</th></tr></thead>
+            <tbody>
+              <tr><td class="mono" style="color:var(--teal)">P1</td><td>MSSP + CTO</td><td class="text-white/90">Partner Agent Risk Pack</td><td>Partner + marketplace + SEO</td><td>Equip partner to reach CISO</td><td>Activated partners + pipeline</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P2</td><td>CISO / risk</td><td class="text-white/90">Sovereign AgentSecOps Lab</td><td>Peer roundtable + direct ABM</td><td>Add AI owner before pilot</td><td>Named committee + reference path</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P3</td><td>Head of AI → CISO</td><td class="text-white/90">Agent Blindspot Audit</td><td>Technical content + 1:few ABM</td><td>Own-topology proof for CISO</td><td>Joint attack-surface workshop</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P4</td><td>Partner → CISO</td><td class="text-white/90">Regulated AI Control Briefing</td><td>Local partner + analyst + event</td><td>Technical validation with AI team</td><td>First lighthouse account</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mono text-[12px] mb-6" style="color:var(--teal)">Budget rule: fund P3 + P2 at 65%; measure buying-group penetration, not isolated lead volume.</p>
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Reverse-engineer activity from S$5M ARR — an illustrative funnel creates a measurable contract between marketing and sales</p>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-3">
+          <div class="rounded-lg border p-4" style="border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.05)"><p class="num text-white text-xl">S$5.0M</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">ARR</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">S$20.0M</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">Qualified pipeline · 4×</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">80</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">SQL / opportunities · S$250K avg</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">200</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">SAL · 40% SAL→SQL</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">500</p><p class="text-[11.5px] text-[#8FA0B8] mt-1">MQL · 40% MQL→SAL</p></div>
+        </div>
+        <p class="mono text-[11px] text-[#8FA0B8]/80">Assumptions: 25% win rate · blended S$100K ARR/order · 4× coverage · multi-touch attribution. Tab 01 refines this into the 280-account named model.</p>
+      </div>
+
+      <!-- 10 Content kit -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">10 · Content kit — build franchises around the buyer's unresolved question</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Each franchise has a persona, a moment of tension and a next commercial step.</p>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Franchise 01 · The Agent Blindspot Index</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">CISO · “What exists that I cannot account for?” Quarterly evidence on shadow agents, excessive agency and exposed flows.</p><p class="mono text-[11px] mt-2 text-[#8FA0B8]">Report → mapping workshop</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Franchise 02 · Sovereign AgentSecOps</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">CISO + procurement · “Will this survive scrutiny here?” Translate regional requirements into deployment decisions.</p><p class="mono text-[11px] mt-2 text-[#8FA0B8]">Brief → peer roundtable → pilot</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Franchise 03 · Attack Path of the Month</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">Head of AI + engineers · “Is this technically real?” Show one attack path and the instrumentation that exposed it.</p><p class="mono text-[11px] mt-2 text-[#8FA0B8]">Post → docs → developer activation</p></div>
+          <div class="rounded-lg border border-white/[.07] p-5"><p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">Franchise 04 · Ship Without the Queue</p><p class="text-[12.5px] text-[#B9C6D8] mt-2 leading-relaxed">Head of AI · “How do we stop re-litigating every release?” Show standing visibility as the faster operating model.</p><p class="mono text-[11px] mt-2 text-[#8FA0B8]">Calculator → technical workshop</p></div>
+        </div>
+      </div>
+
+      <!-- 11 GTM plan -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">11 · Launch &amp; GTM plan — a 180-day build-measure-scale sequence</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Sequence the story: establish the category, prove the product, scale the route to market. Each phase produces commercial evidence before the next spend gate opens.</p>
+        <div class="grid md:grid-cols-3 gap-4 mb-4">
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">0–30 days · Align</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] mt-2 space-y-1.5 leading-relaxed">
+              <li>· Unify TAGAAI/ASIE taxonomy</li>
+              <li>· Validate ICP with 10 interviews</li>
+              <li>· Build baseline dashboard</li>
+              <li>· Package core proof</li>
+            </ul>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">31–90 days · Prove</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] mt-2 space-y-1.5 leading-relaxed">
+              <li>· Launch Agent Blindspot Audit</li>
+              <li>· Run P3/P2 ABM waves</li>
+              <li>· Enable 3–5 partners</li>
+              <li>· Secure first lighthouse story</li>
+            </ul>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em]" style="color:var(--teal)">91–180 days · Scale</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] mt-2 space-y-1.5 leading-relaxed">
+              <li>· Expand winning offer</li>
+              <li>· Launch content franchises</li>
+              <li>· Enter ANZ via partner sprint</li>
+              <li>· Reallocate by pipeline yield</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-[12px] leading-relaxed rounded-lg border p-3" style="border-color:rgba(245,184,92,.3);color:#E8D5B5">Gate: no channel scales without target-account engagement, accepted pipeline and sales-cycle evidence.</p>
+      </div>
+
+      <!-- 12-14 Proof, metrics, asset library -->
+      <div class="card reveal mt-6 p-7">
+        <h2 class="mono text-[12px] tracking-[.14em] uppercase text-[#8FA0B8] mb-2">12–14 · Proof, metrics &amp; asset library — close the loop</h2>
+        <p class="text-[13px] text-[#8FA0B8] mb-5">Proof in market, evidence in CRM, learning back into spend. The kit becomes an operating system only when ownership and cadence are explicit.</p>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em] mb-2" style="color:var(--teal)">12 · Proof system</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] space-y-1.5 leading-relaxed">
+              <li>· 12 years security DNA</li>
+              <li>· 41 customers / 5 countries*</li>
+              <li>· 12,000+ URLs monitored*</li>
+              <li>· Attack-path evidence</li>
+              <li>· Compliance mappings</li>
+              <li>· Lighthouse case studies</li>
+            </ul>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em] mb-2" style="color:var(--teal)">13 · Metrics cadence</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] space-y-1.5 leading-relaxed">
+              <li>· Weekly: engagement + MQL/SAL</li>
+              <li>· Monthly: pipeline + velocity</li>
+              <li>· Quarterly: ARR + CAC/payback</li>
+              <li>· Partner-sourced / influenced</li>
+              <li>· Pillar conversion cohorts</li>
+              <li>· Human attribution review</li>
+            </ul>
+          </div>
+          <div class="rounded-lg border border-white/[.07] p-5">
+            <p class="mono text-[11px] uppercase tracking-[.12em] mb-2" style="color:var(--teal)">14 · Asset library</p>
+            <ul class="text-[12.5px] text-[#B9C6D8] space-y-1.5 leading-relaxed">
+              <li>· <span class="text-white/90">Core</span> — master deck · one-pager · pricing narrative · product FAQ</li>
+              <li>· <span class="text-white/90">Buyer</span> — CISO sheet · AI-leader sheet · procurement checklist</li>
+              <li>· <span class="text-white/90">Sell</span> — discovery guide · demo script · objection cards · competitor frame</li>
+              <li>· <span class="text-white/90">Campaign</span> — landing page · email sequence · social pack · event kit</li>
+              <li>· <span class="text-white/90">Proof</span> — case studies · attack-path evidence · compliance mappings</li>
+              <li>· <span class="text-white/90">Govern</span> — owner · version · approved claims · expiry · usage analytics</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-[11.5px] text-[#8FA0B8]/80 mb-6">* Company-scale proof points from the assignment brief; reconcile with the live-site “8 countries” claim before publication. Rule: no asset ships without one owner, one approved claim set and one measurable job.</p>
+
+        <p class="mono text-[11px] uppercase tracking-[.12em] text-[#8FA0B8]/70 mb-3">Metrics dashboard — what do we stop, fix or double down on? One page for the weekly revenue meeting (illustrative data)</p>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-3 mb-4">
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">62%</p><p class="text-[11px] text-[#8FA0B8] mt-1">Target accounts engaged · goal ≥ 55%</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">38%</p><p class="text-[11px] text-[#8FA0B8] mt-1">MQL → SAL · goal ≥ 40%</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">42%</p><p class="text-[11px] text-[#8FA0B8] mt-1">SAL → SQL · goal ≥ 40%</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">3.4×</p><p class="text-[11px] text-[#8FA0B8] mt-1">Pipeline coverage · goal 4.0×</p></div>
+          <div class="rounded-lg border border-white/[.07] p-4"><p class="num text-white text-xl">31%</p><p class="text-[11px] text-[#8FA0B8] mt-1">Partner influence · track by pillar</p></div>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-[12px]">
+            <thead><tr><th>Pillar</th><th>Spend</th><th>Pipeline</th><th>Coverage</th><th>Velocity</th><th>Decision</th></tr></thead>
+            <tbody>
+              <tr><td class="mono" style="color:var(--teal)">P1</td><td class="num">20%</td><td class="num">S$3.6M</td><td class="num">3.6×</td><td class="num">98 days</td><td style="color:var(--amber)">FIX activation</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P2</td><td class="num">30%</td><td class="num">S$5.9M</td><td class="num">4.2×</td><td class="num">231 days</td><td style="color:var(--teal)">DOUBLE DOWN</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P3</td><td class="num">35%</td><td class="num">S$7.8M</td><td class="num">4.3×</td><td class="num">214 days</td><td style="color:var(--teal)">DOUBLE DOWN</td></tr>
+              <tr><td class="mono" style="color:var(--teal)">P4</td><td class="num">15%</td><td class="num">S$2.7M</td><td class="num">3.4×</td><td class="num">286 days</td><td class="text-[#B9C6D8]">HOLD / learn</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Closing -->
+      <div class="card-2 glow reveal mt-6 p-8 text-center">
+        <p class="display text-white text-xl md:text-2xl leading-snug max-w-3xl mx-auto">The job is not to make more noise. It is to make TraceCtrl the proof standard for accountable agentic AI in regulated APAC.</p>
+        <p class="mono text-[12px] mt-4" style="color:var(--teal)">TRACE YOUR AGENTS · CONTROL YOUR RISKS</p>
+        <a href="artefact-1-tracectrl-landing-page.html" class="inline-block mt-5 rounded-lg border px-5 py-2.5 mono text-[12px] hoverable" style="border-color:rgba(45,212,191,.4);color:var(--teal)">MAP THE ATTACK SURFACE → open the landing page</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="section-rule py-10">
+  <div class="mx-auto max-w-6xl px-5 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[12.5px] text-[#8FA0B8]">
+    <p>Marketing Lead take-home submission · CloudsineAI · July 2026</p>
+    <p class="mono text-[10.5px] tracking-[.06em] text-[#8FA0B8]/60">Public-safe sources only · regulatory items per MAS/IMDA publications · all commercial figures are labelled planning assumptions per brief §3.1</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Tabs ---------- */
+  var panes = document.querySelectorAll('.tabpane');
+  var btns = document.querySelectorAll('.tabbtn');
+  function showTab(id, push) {
+    var found = false;
+    panes.forEach(function (p) { p.classList.toggle('active', p.id === id); if (p.id === id) found = true; });
+    if (!found) { id = 'exec'; panes.forEach(function (p) { p.classList.toggle('active', p.id === id); }); }
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-tab') === id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    if (push !== false) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { showTab(b.getAttribute('data-tab')); }); });
+  document.querySelectorAll('[data-tab-link]').forEach(function (el) {
+    el.addEventListener('click', function (ev) { ev.preventDefault(); showTab(el.getAttribute('data-tab-link')); });
+  });
+  window.addEventListener('hashchange', function () { showTab((location.hash || '#exec').slice(1), false); });
+  showTab((location.hash || '#exec').slice(1), false);
+
+  /* ---------- Reveal animations ---------- */
+  if (reduced || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    document.querySelectorAll('.bar').forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        e.target.querySelectorAll('.bar').forEach(function (b) { b.classList.add('in'); });
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+  document.querySelectorAll('.reveal, .card').forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

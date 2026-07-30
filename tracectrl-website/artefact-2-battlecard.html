@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TraceCtrl Competitive Battlecard — Internal Sales Enablement</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;650;700&family=Instrument+Sans:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0B1120;--card:#141E33;--card2:#1B2942;--teal:#2DD4BF;--amber:#F5B85C;--body:#8FA0B8;--border:rgba(255,255,255,.08)}
+  body{background:var(--ink);color:#E6ECF5;font-family:'Inter',ui-sans-serif,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .display{font-family:'Instrument Sans','Inter',sans-serif;font-weight:700;letter-spacing:-0.02em}
+  .mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+  .kicker{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px}
+  .tbl th{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--body);font-weight:500;text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
+  .tbl td{font-size:13px;color:#CBD5E4;padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top}
+  .tbl tr:last-child td{border-bottom:none}
+  .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid var(--border)}
+  .pill-teal{color:var(--teal);border-color:rgba(45,212,191,.35)}
+  .pill-amber{color:var(--amber);border-color:rgba(245,184,92,.35)}
+</style>
+</head>
+<body>
+
+<header class="border-b border-white/[.06]">
+  <div class="mx-auto max-w-5xl px-5 py-5 flex flex-wrap items-center justify-between gap-3">
+    <div class="flex items-baseline gap-2">
+      <span class="display text-[15px] text-white">CloudsineAI</span><span class="text-white/25">/</span>
+      <span class="mono text-[12px]" style="color:var(--teal)">TraceCtrl Battlecard · v1.0 · Jul 2026</span>
+    </div>
+    <span class="pill pill-amber">Internal — sales enablement only · verify public claims before customer use</span>
+  </div>
+</header>
+
+<main class="mx-auto max-w-5xl px-5 py-12">
+
+  <p class="kicker mb-4">The one-breath position</p>
+  <h1 class="display text-white text-2xl md:text-3xl leading-tight max-w-3xl">
+    Category parity on AI-SPM, AI-DR and red teaming — plus the two things the US / EU / Israel field structurally cannot offer regulated APAC: <span style="color:var(--teal)">sovereignty and validated evidence.</span>
+  </h1>
+  <p class="mt-4 text-[15px] text-[#8FA0B8] max-w-3xl leading-relaxed">
+    Never claim the attack graph is unique — several rivals ship one, and CISOs will check. We win on <em>provable</em> rigour
+    (closed-loop red-team validation with evidence attached), the right to sell where others cannot (residency, on-prem, appliance,
+    government procurement rails, MAS/IMDA mapping), and fourteen years of regional security heritage.
+  </p>
+
+  <!-- Win / lose -->
+  <div class="grid md:grid-cols-2 gap-5 mt-10">
+    <div class="card p-6" style="background:rgba(45,212,191,.04)">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--teal)">Where we win — steer here</p>
+      <ul class="space-y-2.5 text-[13.5px] text-[#B9C6D8] leading-relaxed">
+        <li>· Data residency / sovereignty is a stated requirement (government, FSI, critical infrastructure)</li>
+        <li>· Buyer must evidence agent governance to a regulator — MAS SAFR, IMDA framework, internal audit</li>
+        <li>· On-prem, customer-cloud or air-gapped deployment is mandatory or preferred</li>
+        <li>· Buying committee includes public-sector procurement (framework rails, local entity, local support)</li>
+        <li>· The CISO has been burned by "risk scores" before and wants proof of exploitability</li>
+      </ul>
+    </div>
+    <div class="card p-6" style="background:rgba(245,184,92,.04)">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--amber)">Where we lose — qualify hard, or walk</p>
+      <ul class="space-y-2.5 text-[13.5px] text-[#B9C6D8] leading-relaxed">
+        <li>· US-headquartered buyer running a global consolidation play on an existing CNAPP/cloud-security platform</li>
+        <li>· Pure developer-tool evaluation (an eval/testing library shortlist, no governance requirement)</li>
+        <li>· Buyer wants a global brand logo for board optics more than fit — let the incumbent win the logo contest</li>
+        <li>· No agent deployments in production and none planned within 12 months (park in nurture, revisit)</li>
+      </ul>
+      <p class="mt-4 text-[12.5px] text-[#8FA0B8]">Losing fast in the wrong deals funds winning slow in the right ones.</p>
+    </div>
+  </div>
+
+  <!-- Field map -->
+  <div class="card p-6 mt-6 overflow-x-auto">
+    <p class="mono text-[11px] tracking-[.14em] uppercase text-[#8FA0B8] mb-5">The field — four archetypes you will actually meet</p>
+    <table class="tbl w-full min-w-[820px]">
+      <thead><tr><th class="min-w-[170px]">Archetype (examples)</th><th>Their strength</th><th>Their structural gap</th><th class="min-w-[240px]">Our counter</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="text-white/90">Platform giants adding AI-SPM<br><span class="mono text-[11px] text-[#8FA0B8]/60">Wiz / Palo Alto / CrowdStrike class</span></td>
+          <td>Brand safety, existing footprint, consolidation economics</td>
+          <td>AI-agent security is a feature, not the mission; telemetry and evidence typically leave the jurisdiction; agent-layer depth is shallow at runtime</td>
+          <td>Concede cloud posture breadth. Narrow to the agent layer: "Ask them to show you a validated agent attack path, with evidence, stored in-country." Position as complement first, replacement later.</td>
+        </tr>
+        <tr>
+          <td class="text-white/90">AI-DR / guardrail specialists<br><span class="mono text-[11px] text-[#8FA0B8]/60">Lakera / Prompt Security class</span></td>
+          <td>Strong runtime filtering, developer-friendly, fast POCs</td>
+          <td>Point solution: no discovery, no attack graph, no closed-loop validation, thin governance evidence; US/EU/IL hosting</td>
+          <td>Reframe the category: a guardrail without inventory and validation is a lock on one door of an unmapped building. Full loop — Discover → Assess → Test → Protect → Govern — on sovereign infrastructure.</td>
+        </tr>
+        <tr>
+          <td class="text-white/90">Red-team / testing pure-plays<br><span class="mono text-[11px] text-[#8FA0B8]/60">Mindgard / scanner class</span></td>
+          <td>Credible adversarial research, good findings decks</td>
+          <td>Findings without enforcement: nothing runs at runtime, nothing blocks, evidence isn't tied to live posture</td>
+          <td>"A pentest PDF ages from the moment it's printed. TAGAAI validates against your <em>live</em> configuration and the same platform enforces the fix." Test is one stage of our loop, their whole product.</td>
+        </tr>
+        <tr>
+          <td class="text-white/90">LLM observability players<br><span class="mono text-[11px] text-[#8FA0B8]/60">Langfuse / Arize class</span></td>
+          <td>Loved by engineering, already installed, cheap</td>
+          <td>Not a security product: no attack semantics, no enforcement, no audit evidence — and they say so themselves</td>
+          <td>Don't fight — draw the line: "Keep it. It tells you your agents are healthy. It cannot tell you what they did, whether they were persuaded, or prove control to MAS. That's the accountability gap, and it's ours."</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Landmines + objections -->
+  <div class="grid md:grid-cols-2 gap-5 mt-6">
+    <div class="card p-6">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--teal)">Landmines to plant early (fair, factual, fatal)</p>
+      <ul class="space-y-3 text-[13.5px] text-[#B9C6D8] leading-relaxed">
+        <li>"Where — physically — will your agent telemetry and incident evidence be stored, and under whose legal jurisdiction?"</li>
+        <li>"When their platform scores a risk 'critical', ask what evidence proves it's actually exploitable in <em>your</em> environment."</li>
+        <li>"Ask for their MAS SAFR and IMDA agentic-framework mapping. Ask how many regulated APAC deployments they'll reference."</li>
+        <li>"Ask whether the air-gapped option is on the price list or on the roadmap."</li>
+      </ul>
+    </div>
+    <div class="card p-6">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--teal)">Objection handling</p>
+      <ul class="space-y-3 text-[13.5px] text-[#B9C6D8] leading-relaxed">
+        <li><span class="text-white/90">"We've never heard of CloudsineAI."</span> — "Fourteen years securing this region's web layer; 41 customers across 5 countries; 100 GenAI applications secured in one public-sector deployment. The name is new to the category. The security DNA isn't."</li>
+        <li><span class="text-white/90">"The big platform says they'll cover agents soon."</span> — "Roadmaps don't produce audit evidence. MAS SAFR is in force now; we map to it today, in-country."</li>
+        <li><span class="text-white/90">"Rivals have an attack graph too."</span> — "They do — we never claimed otherwise. Ask which of them attaches closed-loop red-team evidence to each path, and stores it inside your jurisdiction."</li>
+        <li><span class="text-white/90">"You're small — what if you get acquired?"</span> — "Our platform runs in your tenancy or on your appliance; your evidence and your controls stay yours under any scenario. Ask the SaaS-only vendors the same question."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Discovery + proof -->
+  <div class="grid md:grid-cols-2 gap-5 mt-6">
+    <div class="card p-6">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--teal)">Discovery questions that open the gap</p>
+      <ul class="space-y-3 text-[13.5px] text-[#B9C6D8] leading-relaxed">
+        <li>"How many AI agents are running in your environment right now? How confident are you in that number?"</li>
+        <li>"If your regulator asked tomorrow what a specific agent did last Tuesday — tools invoked, data touched — how long would the answer take?"</li>
+        <li>"Who signed off the blast radius of your most privileged agent?"</li>
+        <li>"What happens to your AI programme the day after an agent incident? Who gets to switch it back on, and on what evidence?"</li>
+      </ul>
+    </div>
+    <div class="card p-6" style="background:var(--card2)">
+      <p class="mono text-[11px] tracking-[.14em] uppercase mb-4" style="color:var(--teal)">Proof points — use verbatim</p>
+      <ul class="mono text-[12.5px] leading-loose text-[#B9C6D8]">
+        <li>· 14 years security DNA · Singapore since 2012</li>
+        <li>· 41 customers · 5 countries · 12,000+ URLs monitored</li>
+        <li>· 100 GenAI apps secured in one public-sector deployment</li>
+        <li>· LVD: 44+ vulnerabilities catalogued · 37 model versions</li>
+        <li>· Form factors: SaaS · your-cloud/on-prem · appliance</li>
+        <li>· MAS + IMDA compliance mapping available</li>
+        <li>· We run our own operations on agentic AI</li>
+      </ul>
+      <p class="mt-4 text-[12px] text-[#8FA0B8]">First-mention line, verbatim: "CloudsineAI TraceCtrl — the sovereign AI-agent security platform for regulated Asia-Pacific."</p>
+    </div>
+  </div>
+
+  <footer class="mt-10 pt-6 border-t border-white/[.06] flex flex-wrap justify-between gap-3 text-[12px] text-[#8FA0B8]/70">
+    <p>Owner: Marketing · Review cadence: monthly at pipeline council · Sources: public information only</p>
+    <p class="mono text-[10.5px] tracking-[.06em]">Competitor examples are archetypes drawn from public positioning — always verify current claims before citing in-deal</p>
+  </footer>
+
+</main>
+</body>
+</html>
